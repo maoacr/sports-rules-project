@@ -31,19 +31,39 @@ v3.3.2, the community fork of Isar. Resolved in commit `8b0a5b1` (PR #3).
 
 ---
 
-## K-2: `pubspec.lock` is in `.gitignore`
+## K-2: ~~`pubspec.lock` is in `.gitignore`~~ (PARTIALLY RESOLVED)
 
-**Symptom:** `pubspec.lock` is excluded by `.gitignore` line 13, so
-different developers may resolve to different transitive versions of
-`isar`, `firebase_auth`, etc.
+**Resolution (this part — done):** `pubspec.lock` is now committed
+(PR #7, commit `20ade86`). The `.gitignore` template that came with
+the Flutter scaffold was the library-style one; for an app project
+the lockfile belongs in the repo so every developer and CI run gets
+the exact same dependency tree.
 
-**Recommended fix:** remove `pubspec.lock` from `.gitignore` for an app
-project (vs a library). This is a Flutter convention.
+**Remaining part — the CI workflow itself is BLOCKED.**
 
-**Why deferred:** the current `.gitignore` is intentionally the template
-generated for library-style projects. Migrating to app-style is a
-one-line change but conceptually larger (touches the whole team's
-workflow).
+The CI workflow file is ready and tested locally on the
+`ci/add-github-actions` branch (commit `6f46ad3`), but pushing it
+directly fails because the GitHub OAuth token used by the `gh` CLI
+in this environment does not have the `workflow` scope:
+
+```
+! [remote rejected] (refusing to allow an OAuth App to create or
+update workflow `.github/workflows/flutter.yml` without `workflow`
+scope)
+```
+
+Tracked as **issue #6**. Workaround: a maintainer with the `workflow`
+scope pushes the branch, or the file is uploaded through the GitHub
+web UI directly. Once on the repo, the workflow runs automatically
+on every PR.
+
+**Once unblocked, the CI job will:**
+1. Set up Java 17 + Flutter 3.38.7
+2. Run `flutter pub get`
+3. Verify the Isar generated schema is up to date (fails if
+   `isar_storage.g.dart` has any diff — surfaces a forgotten regen)
+4. Run `flutter analyze`
+5. Run `flutter test --reporter compact`
 
 ---
 
