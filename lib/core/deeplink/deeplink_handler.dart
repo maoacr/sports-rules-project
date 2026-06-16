@@ -1,5 +1,5 @@
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import '../error/failures.dart';
 
 /// Route path constants.
 class RoutePaths {
@@ -168,7 +168,7 @@ class DeepLinkHandler {
     if (result is DeepLinkSuccess) {
       final route = result.route;
 
-      if (route is DeepLinkRule && route.ruleId != null) {
+      if (route is DeepLinkRule) {
         // Rule deep links need sportId and chapterId from query params
         final sportId = result.uri.queryParameters['sport'];
         final chapterId = result.uri.queryParameters['chapter'];

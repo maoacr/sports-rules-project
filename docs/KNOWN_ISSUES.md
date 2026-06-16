@@ -7,60 +7,27 @@ the recommended fix.
 
 ---
 
-## K-1: Isar storage schema cannot be generated
+## K-1: ~~Isar storage schema cannot be generated~~ (RESOLVED)
 
-**Symptom:** `flutter analyze` reports 23 errors in
-`lib/core/storage/isar_storage.dart` and `lib/main.dart` of the form
-"The getter 'cachedSports' isn't defined for the type 'Isar'" and
-"Undefined name 'CachedSportSchema'". The app cannot boot against a
-real device.
+**Resolution:** migrated to [`isar_community`](https://pub.dev/packages/isar_community)
+v3.3.2, the community fork of Isar. Resolved in commit `8b0a5b1` (PR #3).
 
-**Root cause:** `isar_storage.dart` declares three `@collection` classes
-(`CachedSport`, `CachedChapter`, `CachedRule`) that depend on the
-generated `isar_storage.g.dart` part file. The generator
-(`isar_generator 3.1.0+1`, last published 3 years ago) is incompatible
-with the current Dart SDK in this environment (Flutter 3.38.7, Dart
-3.10.7) on two fronts:
+**What was done:**
+- `pubspec.yaml`: `isar: ^3.1.0+1` → `isar_community: ^3.3.2`,
+  `isar_flutter_libs` → `isar_community_flutter_libs`,
+  added `isar_community_generator: ^3.3.2`
+- `build_runner` upgraded from `^2.4.12` to `^2.15.0` (the old line
+  predates Dart 3.7 and cannot generate the new frontend_server snapshot)
+- All `package:isar/isar.dart` imports updated to
+  `package:isar_community/isar.dart`
+- `Isar.instance` (removed in 3.3) replaced with the value returned by
+  `await Isar.open(...)` in `main.dart`
+- Build workflow uses `dart run build_runner build --force-jit` because
+  the SDK's AOT snapshot path on Flutter 3.38 is not what the generator
+  expects. The generated `.g.dart` is committed to the repo so this is
+  a one-time manual step.
 
-1. **`isar_generator` ↔ `bloc_test` version conflict.** The two packages
-   pin incompatible ranges of `test`/`test_api`. Adding
-   `isar_generator: ^3.1.0+1` to `dev_dependencies` causes
-   `flutter pub get` to fail with "version solving failed".
-2. **`build_runner` cannot precompile against Dart 3.10.** Even when the
-   conflict is papered over with `dependency_overrides`, build_runner
-   fails with `Could not find a command named
-   "frontend_server.dart.snapshot"` because the Flutter SDK in this
-   environment ships only `frontend_server_aot.dart.snapshot`. The
-   `build_runner 2.4.x` line was designed for Dart ≤ 3.5.
-
-**Workaround in place:**
-- The three repository test files have been rewritten as **contract
-  tests** of the domain interfaces (`AuthRepository`, `SportRepository`)
-  instead of unit tests of the implementations. They verify the
-  interfaces are mockable and that the `Either<Failure, T>` contract is
-  correctly typed, but they do NOT cover the `try/catch` logic in
-  `AuthRepositoryImpl` and `SportRepositoryImpl` (which depends on
-  `IsarStorage`).
-- Test count is 36/36 passing (20 bloc tests + 16 contract tests).
-- The `flutter analyze` errors are tracked but not blocking the test
-  suite because the test files do not transitively import
-  `IsarStorage`.
-
-**Recommended fix (out of scope for Issue #1):** migrate the local
-storage layer to a maintained alternative. Options, in order of
-preference:
-
-1. **`isar_community`** (https://pub.dev/packages/isar_community) — the
-   community fork of Isar 3.x. It tracks the same API but is being
-   updated for newer SDKs. Lowest migration cost.
-2. **Migrate to `drift`** (https://pub.dev/packages/drift) — Dart-native
-   SQL ORM. Requires rewriting `IsarStorage` and the data sources but
-   has full type safety and a working code generator.
-3. **Migrate to `sqflite` + manual mapping** — most explicit, no
-   codegen, more boilerplate.
-
-The recommended option is `isar_community` if the fork stabilizes, or
-`drift` if the team wants a long-term-supported solution.
+**Remaining concern → tracked as K-3 below.**
 
 ---
 
@@ -73,7 +40,39 @@ different developers may resolve to different transitive versions of
 **Recommended fix:** remove `pubspec.lock` from `.gitignore` for an app
 project (vs a library). This is a Flutter convention.
 
-**Why deferred:** the current `.gitignore` is intentionally the
-template generated for library-style projects. Migrating to
-app-style is a one-line change but conceptually larger (touches the
-whole team's workflow).
+**Why deferred:** the current `.gitignore` is intentionally the template
+generated for library-style projects. Migrating to app-style is a
+one-line change but conceptually larger (touches the whole team's
+workflow).
+
+---
+
+## K-3: `isar_community` is archived — plan to migrate to `drift`
+
+**Context:** The `isar-community/isar` GitHub repo was archived on
+Aug 18, 2025 and is now read-only. The 3.x line of releases (the one we
+use) is the last branch that received maintenance. Open issues in that
+repo (e.g. #115 conflicts with `json_serializable`, #120 16KB Android
+pages, #126 generator null-check bug) are unlikely to be fixed.
+
+**Impact:** `isar_community 3.3.2` works for us today, but is a frozen
+snapshot. When the Dart SDK moves further ahead (Dart 3.11+, Flutter
+3.40+) or a new platform requirement lands (e.g. Android 16KB pages on
+all targets), this fork may stop compiling.
+
+**Recommended fix:** migrate the local cache layer to
+[`drift`](https://pub.dev/packages/drift) (formerly `moor`). Drift is
+actively maintained, has first-class Flutter support, a working
+code generator on modern SDKs, and is the de-facto standard for
+type-safe SQL in Flutter.
+
+**Estimated cost:** 1-2 weeks. The migration is mechanical because the
+abstraction already lives behind the `SportLocalDataSource` interface —
+only the implementation needs to change.
+
+**Trigger conditions to schedule the migration:**
+1. `isar_community` becomes incompatible with a Flutter minor version
+2. The mobile team grows beyond a single dev
+3. We need cross-platform sync (drift supports desktop + web natively)
+
+Until any of those triggers fire, `isar_community` is the right call.
