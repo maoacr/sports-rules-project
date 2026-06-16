@@ -36,7 +36,11 @@ class ChapterDetailPage extends StatelessWidget {
                     margin: const EdgeInsets.only(bottom: 8),
                     child: ListTile(
                       title: Text(rule.title),
-                      subtitle: Text(rule.content.truncate(80)),
+                      subtitle: Text(
+                        rule.content.length > 80
+                            ? '${rule.content.substring(0, 80)}...'
+                            : rule.content,
+                      ),
                       trailing: const Icon(Icons.chevron_right),
                       onTap: () => context.push('/sports/$sportId/chapters/$chapterId/rules/${rule.id}'),
                     ),

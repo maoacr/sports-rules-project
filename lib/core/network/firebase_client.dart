@@ -9,7 +9,7 @@ import 'package:firebase_remote_config/firebase_remote_config.dart';
 class FirebaseClient {
   FirebaseApp? _app;
   FirebaseAuth? _auth;
-  Firestore? _firestore;
+  FirebaseFirestore? _firestore;
   FirebaseStorage? _storage;
   FirebaseRemoteConfig? _remoteConfig;
 
@@ -26,8 +26,8 @@ class FirebaseClient {
   }
 
   /// Cloud Firestore instance.
-  Firestore get firestore {
-    _firestore ??= Firestore.instanceFor(app: app);
+  FirebaseFirestore get firestore {
+    _firestore ??= FirebaseFirestore.instanceFor(app: app);
     return _firestore!;
   }
 

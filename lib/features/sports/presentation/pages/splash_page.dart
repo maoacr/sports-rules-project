@@ -6,7 +6,6 @@ import '../../../../core/deeplink/deeplink_handler.dart';
 import '../../../../core/di/injection.dart';
 import '../../../../core/storage/shared_preferences_storage.dart';
 import '../../../auth/presentation/bloc/auth_bloc.dart';
-import '../../../auth/presentation/bloc/auth_state.dart';
 
 /// Splash page that checks auth state and handles deep links.
 ///

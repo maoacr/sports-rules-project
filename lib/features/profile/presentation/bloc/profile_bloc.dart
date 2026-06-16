@@ -8,7 +8,9 @@ part 'profile_state.dart';
 
 /// BLoC for the user profile screen.
 class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
+  // ignore: unused_field
   final AuthRepository _authRepository;
+  // ignore: unused_field
   final PurchasesRepository _purchasesRepository;
 
   ProfileBloc(this._authRepository, this._purchasesRepository)
