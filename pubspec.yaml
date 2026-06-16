@@ -1,0 +1,58 @@
+name: sports_rules_app
+description: A sports rules platform with freemium model.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State management
+  flutter_bloc: ^8.1.6
+  equatable: ^2.0.5
+
+  # Dependency injection
+  get_it: ^7.7.0
+
+  # Navigation
+  go_router: ^14.2.7
+
+  # Firebase
+  firebase_core: ^3.5.0
+  firebase_auth: ^5.2.0
+  cloud_firestore: ^5.4.0
+  firebase_storage: ^12.2.0
+  firebase_remote_config: ^5.5.0
+
+  # RevenueCat
+  purchases_flutter: ^7.0.0
+
+  # Local storage
+  isar: ^3.1.0+1
+  isar_flutter_libs: ^3.1.0+1
+  shared_preferences: ^2.3.2
+  path_provider: ^2.1.5
+
+  # Utils
+  dartz: ^0.10.1
+  intl: ^0.19.0
+  cached_network_image: ^3.4.1
+  shimmer: ^3.0.0
+  share_plus: ^10.0.2
+  url_launcher: ^6.3.0
+  google_sign_in: ^6.2.2
+  sign_in_with_apple: ^5.0.0
+  crypto: ^3.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  isar_generator: ^3.1.0+1
+  build_runner: ^2.4.12
+
+flutter:
+  uses-material-design: true

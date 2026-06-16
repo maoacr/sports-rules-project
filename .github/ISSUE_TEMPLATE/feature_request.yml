@@ -1,0 +1,69 @@
+name: Feature Request
+description: Suggest a new feature or improvement
+title: "feat(scope): short description"
+labels: ["enhancement", "status:needs-review"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a new feature. Please fill in the template below.
+
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Pre-flight Checks
+      description: Please confirm before submitting.
+      options:
+        - label: I have searched existing issues and this is not a duplicate
+          required: true
+        - label: I understand this issue needs `status:approved` before a PR can be opened
+          required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Description
+      description: What pain point does this feature solve?
+      placeholder: As a [user], I want to [action] so that [benefit].
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: How should this work from the user's perspective?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected Area
+      description: Where in the codebase does this change apply?
+      options:
+        - App / UI
+        - Auth
+        - Sports Feature
+        - Purchases
+        - Profile
+        - Navigation
+        - Platform Config
+        - CI / Build
+        - Documentation
+        - Tests
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Other approaches you thought about and why you didn't pick them.
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context
+      description: Mockups, examples, references, links.
