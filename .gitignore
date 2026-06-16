@@ -10,7 +10,9 @@
 .pub-cache/
 .pub/
 build/
-pubspec.lock
+# pubspec.lock is NOT ignored — this is an app project (not a library),
+# so we want reproducible builds across all environments. Flutter
+# convention: app projects commit pubspec.lock, libraries do not.
 
 # IDE
 .idea/
