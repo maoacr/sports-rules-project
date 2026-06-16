@@ -2,6 +2,10 @@ plugins {
     id "com.android.application"
     id "kotlin-android"
     id "dev.flutter.flutter-gradle-plugin"
+    // Applied here so the build fails fast if google-services.json is
+    // missing or invalid. The plugin reads the file from android/app/
+    // and injects Firebase initialization. See docs/FIREBASE_SETUP.md.
+    id "com.google.gms.google-services"
 }
 
 def localProperties = new Properties()

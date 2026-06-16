@@ -46,7 +46,11 @@
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 
-	<!-- Google Sign-In -->
+	<!-- Google Sign-In: CFBundleURLSchemes.
+	     The placeholder value below MUST be replaced with the real
+	     reversed client ID from ios/Runner/GoogleService-Info.plist
+	     (key: REVERSED_CLIENT_ID) before this app can use Google
+	     Sign-In on a real device. See docs/FIREBASE_SETUP.md. -->
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -55,12 +59,6 @@
 				<string>com.googleusercontent.apps.YOUR_CLIENT_ID</string>
 			</array>
 		</dict>
-	</array>
-
-	<!-- Associated Domains (Universal Links) -->
-	<key>com.apple.developer.associated-domains</key>
-	<array>
-		<string>applinks:sportsrules.app</string>
 	</array>
 
 	<!-- Privacy descriptions -->

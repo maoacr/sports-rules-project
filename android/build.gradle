@@ -1,3 +1,17 @@
+buildscript {
+    ext.kotlin_version = '1.9.22'
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        // Firebase BoM + google-services plugin. Version pinned to the
+        // last stable release that works with Gradle 8.x and the
+        // Firebase libraries declared in pubspec.yaml.
+        classpath 'com.google.gms:google-services:4.4.2'
+    }
+}
+
 allprojects {
     repositories {
         google()
