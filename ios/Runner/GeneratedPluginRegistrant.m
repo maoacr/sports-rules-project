@@ -42,10 +42,10 @@
 @import google_sign_in_ios;
 #endif
 
-#if __has_include(<isar_flutter_libs/IsarFlutterLibsPlugin.h>)
-#import <isar_flutter_libs/IsarFlutterLibsPlugin.h>
+#if __has_include(<isar_community_flutter_libs/IsarFlutterLibsPlugin.h>)
+#import <isar_community_flutter_libs/IsarFlutterLibsPlugin.h>
 #else
-@import isar_flutter_libs;
+@import isar_community_flutter_libs;
 #endif
 
 #if __has_include(<purchases_flutter/PurchasesFlutterPlugin.h>)

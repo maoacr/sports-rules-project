@@ -31,8 +31,14 @@ dependencies:
   purchases_flutter: ^7.0.0
 
   # Local storage
-  isar: ^3.1.0+1
-  isar_flutter_libs: ^3.1.0+1
+  # isar 3.1.0+1 (last published by the original author) is incompatible
+  # with the current Dart SDK toolchain. We use the community fork
+  # `isar_community` (3.3.2, the last release before the community repo
+  # was archived) which keeps the same API and a working code generator.
+  # Tracked tech debt: migrate to `drift` when the project grows beyond
+  # local cache. See docs/KNOWN_ISSUES.md K-1 / K-3.
+  isar_community: ^3.3.2
+  isar_community_flutter_libs: ^3.3.2
   shared_preferences: ^2.3.2
   path_provider: ^2.1.5
 
@@ -53,7 +59,13 @@ dev_dependencies:
   flutter_lints: ^4.0.0
   bloc_test: ^9.1.7
   mocktail: ^1.0.4
-  build_runner: ^2.4.12
+  isar_community_generator: ^3.3.2
+  build_runner: ^2.15.0
+  # Force the new frontend_server_client (4.x) which knows how to fall
+  # back to the AOT snapshot that ships with Flutter 3.38+. Without
+  # this override, build_runner pulls 3.x which expects the legacy
+  # debug-only snapshot and fails on this SDK.
+  frontend_server_client: ^4.0.0
 
 flutter:
   uses-material-design: true
