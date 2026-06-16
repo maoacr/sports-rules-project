@@ -1,144 +1,323 @@
-// Contract test for the AuthRepository domain interface.
+// Unit tests for [AuthRepositoryImpl].
 //
-// Verifies that the [AuthRepository] contract can be satisfied by an
-// implementation, by exercising every method against a mock that records
-// its interactions. This is NOT a unit test of [AuthRepositoryImpl] —
-// that requires `isar_storage.g.dart` to exist, which is currently blocked
-// by an incompatibility between `isar_generator 3.1.0+1` and the project's
-// Dart SDK (3.10.x) — see KNOWN_ISSUES.md.
+// Now that the Isar toolchain is fixed (K-1 resolved in PR #3), this
+// file can import the concrete implementation and exercise the real
+// `Either<Failure, T>` mapping logic instead of stubbing the
+// interface.
 //
-// The logic of `Either<Failure, T>` mapping in the implementation is
-// therefore NOT covered here. It will be added once the Isar toolchain
-// is fixed (tracked in a separate follow-up issue).
+// Coverage:
+//   - getCurrentUser: Right(User) on signed-in, Left(AuthFailure) on null
+//   - signInWithEmail: Right(User) on success, Left(AuthFailure) on
+//     FirebaseAuthException, Left(ServerFailure) on generic Exception
+//   - signInWithGoogle: Right(User) on success, Left(AuthFailure) on
+//     sign-in-cancelled, Left(AuthFailure) on other FirebaseAuthException
+//   - signInWithApple: Right(User) on success, Left(AuthFailure) on
+//     apple-sign-in-unsupported-platform
+//   - signOut: Right(null) on success, Left(ServerFailure) on Exception
+//   - authStateChanges: stream maps firebase User to domain User
 
-import 'package:dartz/dartz.dart';
+import 'package:firebase_auth/firebase_auth.dart' as fb_auth;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:sports_rules_app/core/error/failures.dart';
+import 'package:sports_rules_app/features/auth/data/datasources/firebase_auth_datasource.dart';
+import 'package:sports_rules_app/features/auth/data/repositories/auth_repository_impl.dart';
 import 'package:sports_rules_app/features/auth/domain/entities/user.dart';
-import 'package:sports_rules_app/features/auth/domain/repositories/auth_repository.dart';
 
-class MockAuthRepository extends Mock implements AuthRepository {}
-
-class FakeUser extends Fake implements User {}
+class MockFirebaseAuthDataSource extends Mock implements FirebaseAuthDataSource {}
 
 void main() {
-  late MockAuthRepository authRepository;
-
-  setUpAll(() {
-    registerFallbackValue(FakeUser());
-  });
+  late AuthRepositoryImpl authRepository;
+  late MockFirebaseAuthDataSource mockDataSource;
 
   setUp(() {
-    authRepository = MockAuthRepository();
+    mockDataSource = MockFirebaseAuthDataSource();
+    authRepository = AuthRepositoryImpl(mockDataSource);
   });
 
-  const testUser = User(
-    uid: 'uid-123',
-    email: 'test@example.com',
-    displayName: 'Test User',
-    photoUrl: null,
-  );
+  const testUid = 'uid-123';
+  const testEmail = 'test@example.com';
+  const testDisplayName = 'Test User';
+  const testPhotoUrl = 'https://example.com/photo.jpg';
 
-  const testFailure = AuthFailure(
-    message: 'Auth failed',
-    type: AuthFailureType.unknown,
-  );
+  group('AuthRepositoryImpl', () {
+    group('getCurrentUser', () {
+      test('returns Right(User) when FirebaseAuth has a signed-in user', () async {
+        final fbUser = _MockFirebaseUser();
+        when(() => fbUser.uid).thenReturn(testUid);
+        when(() => fbUser.email).thenReturn(testEmail);
+        when(() => fbUser.displayName).thenReturn(testDisplayName);
+        when(() => fbUser.photoURL).thenReturn(testPhotoUrl);
+        when(() => mockDataSource.getCurrentUser()).thenAnswer((_) async => fbUser);
 
-  group('AuthRepository contract', () {
-    test('getCurrentUser returns Right(User) when signed in', () async {
-      when(() => authRepository.getCurrentUser())
-          .thenAnswer((_) async => const Right<Failure, User>(testUser));
+        final result = await authRepository.getCurrentUser();
 
-      final result = await authRepository.getCurrentUser();
+        expect(result.isRight(), true);
+        result.fold(
+          (_) => fail('Expected Right'),
+          (user) {
+            expect(user.uid, testUid);
+            expect(user.email, testEmail);
+            expect(user.displayName, testDisplayName);
+            expect(user.photoUrl, testPhotoUrl);
+          },
+        );
+      });
 
-      expect(result.isRight(), true);
-      result.fold(
-        (_) => fail('Expected Right'),
-        (user) {
-          expect(user.uid, testUser.uid);
-          expect(user.email, testUser.email);
-        },
-      );
-      verify(() => authRepository.getCurrentUser()).called(1);
+      test('returns Left(AuthFailure) when no user is signed in', () async {
+        when(() => mockDataSource.getCurrentUser()).thenAnswer((_) async => null);
+
+        final result = await authRepository.getCurrentUser();
+
+        expect(result.isLeft(), true);
+        result.fold(
+          (failure) {
+            expect(failure, isA<AuthFailure>());
+            expect(failure.message, 'No user signed in');
+          },
+          (_) => fail('Expected Left'),
+        );
+      });
+
+      test('returns Left(ServerFailure) on generic exception', () async {
+        when(() => mockDataSource.getCurrentUser())
+            .thenThrow(Exception('Unknown error'));
+
+        final result = await authRepository.getCurrentUser();
+
+        expect(result.isLeft(), true);
+        result.fold(
+          (failure) => expect(failure, isA<ServerFailure>()),
+          (_) => fail('Expected Left'),
+        );
+      });
     });
 
-    test('getCurrentUser returns Left(AuthFailure) when not signed in', () async {
-      when(() => authRepository.getCurrentUser())
-          .thenAnswer((_) async => const Left<Failure, User>(testFailure));
+    group('signInWithEmail', () {
+      test('returns Right(User) on success', () async {
+        final fbUser = _MockFirebaseUser();
+        when(() => fbUser.uid).thenReturn(testUid);
+        when(() => fbUser.email).thenReturn(testEmail);
+        when(() => fbUser.displayName).thenReturn(null);
+        when(() => fbUser.photoURL).thenReturn(null);
+        when(() => mockDataSource.signInWithEmail(any(), any()))
+            .thenAnswer((_) async => fbUser);
 
-      final result = await authRepository.getCurrentUser();
+        final result = await authRepository.signInWithEmail(
+          testEmail,
+          'password123',
+        );
 
-      expect(result.isLeft(), true);
-      result.fold(
-        (failure) => expect(failure, isA<AuthFailure>()),
-        (_) => fail('Expected Left'),
-      );
+        expect(result.isRight(), true);
+        result.fold(
+          (_) => fail('Expected Right'),
+          (user) {
+            expect(user.uid, testUid);
+            expect(user.email, testEmail);
+          },
+        );
+        verify(() => mockDataSource.signInWithEmail(testEmail, 'password123')).called(1);
+      });
+
+      test('returns Left(AuthFailure) on invalid-credential FirebaseAuthException', () async {
+        when(() => mockDataSource.signInWithEmail(any(), any()))
+            .thenThrow(fb_auth.FirebaseAuthException(
+          code: 'invalid-credential',
+          message: 'Invalid credentials',
+        ));
+
+        final result = await authRepository.signInWithEmail(
+          'bad@example.com',
+          'wrong',
+        );
+
+        expect(result.isLeft(), true);
+        result.fold(
+          (failure) {
+            expect(failure, isA<AuthFailure>());
+            expect(failure.message, contains('Invalid email or password'));
+            expect((failure as AuthFailure).type, AuthFailureType.invalidCredentials);
+          },
+          (_) => fail('Expected Left'),
+        );
+      });
+
+      test('returns Left(AuthFailure) on weak-password FirebaseAuthException', () async {
+        when(() => mockDataSource.signInWithEmail(any(), any()))
+            .thenThrow(fb_auth.FirebaseAuthException(
+          code: 'weak-password',
+          message: 'Password is too weak',
+        ));
+
+        final result = await authRepository.signInWithEmail(
+          'test@example.com',
+          '123',
+        );
+
+        expect(result.isLeft(), true);
+        result.fold(
+          (failure) {
+            expect(failure, isA<AuthFailure>());
+            expect((failure as AuthFailure).type, AuthFailureType.weakPassword);
+          },
+          (_) => fail('Expected Left'),
+        );
+      });
+
+      test('returns Left(ServerFailure) on generic exception', () async {
+        when(() => mockDataSource.signInWithEmail(any(), any()))
+            .thenThrow(Exception('Network down'));
+
+        final result = await authRepository.signInWithEmail(
+          testEmail,
+          'password123',
+        );
+
+        expect(result.isLeft(), true);
+        result.fold(
+          (failure) => expect(failure, isA<ServerFailure>()),
+          (_) => fail('Expected Left'),
+        );
+      });
     });
 
-    test('signInWithEmail forwards credentials and returns User', () async {
-      when(() => authRepository.signInWithEmail(any(), any()))
-          .thenAnswer((_) async => const Right<Failure, User>(testUser));
+    group('signInWithGoogle', () {
+      test('returns Right(User) on success', () async {
+        final fbUser = _MockFirebaseUser();
+        when(() => fbUser.uid).thenReturn(testUid);
+        when(() => fbUser.email).thenReturn(testEmail);
+        when(() => fbUser.displayName).thenReturn(null);
+        when(() => fbUser.photoURL).thenReturn(null);
+        when(() => mockDataSource.signInWithGoogle()).thenAnswer((_) async => fbUser);
 
-      final result = await authRepository.signInWithEmail(
-        'test@example.com',
-        'password123',
-      );
+        final result = await authRepository.signInWithGoogle();
 
-      expect(result.isRight(), true);
-      verify(() => authRepository.signInWithEmail(
-            'test@example.com',
-            'password123',
-          )).called(1);
+        expect(result.isRight(), true);
+        verify(() => mockDataSource.signInWithGoogle()).called(1);
+      });
+
+      test('returns Left(AuthFailure) with cancellation message on sign-in-cancelled', () async {
+        when(() => mockDataSource.signInWithGoogle())
+            .thenThrow(fb_auth.FirebaseAuthException(
+          code: 'sign-in-cancelled',
+          message: 'Google sign-in was cancelled by the user.',
+        ));
+
+        final result = await authRepository.signInWithGoogle();
+
+        expect(result.isLeft(), true);
+        result.fold(
+          (failure) {
+            expect(failure, isA<AuthFailure>());
+            expect(failure.message, contains('cancelled'));
+          },
+          (_) => fail('Expected Left'),
+        );
+      });
+
+      test('returns Left(AuthFailure) on other FirebaseAuthException', () async {
+        when(() => mockDataSource.signInWithGoogle())
+            .thenThrow(fb_auth.FirebaseAuthException(
+          code: 'sign-in-failed',
+          message: 'Google sign-in failed',
+        ));
+
+        final result = await authRepository.signInWithGoogle();
+
+        expect(result.isLeft(), true);
+        result.fold(
+          (failure) => expect(failure, isA<AuthFailure>()),
+          (_) => fail('Expected Left'),
+        );
+      });
     });
 
-    test('signInWithGoogle returns User on success', () async {
-      when(() => authRepository.signInWithGoogle())
-          .thenAnswer((_) async => const Right<Failure, User>(testUser));
+    group('signInWithApple', () {
+      test('returns Right(User) on success', () async {
+        final fbUser = _MockFirebaseUser();
+        when(() => fbUser.uid).thenReturn(testUid);
+        when(() => fbUser.email).thenReturn(testEmail);
+        when(() => fbUser.displayName).thenReturn(null);
+        when(() => fbUser.photoURL).thenReturn(null);
+        when(() => mockDataSource.signInWithApple()).thenAnswer((_) async => fbUser);
 
-      final result = await authRepository.signInWithGoogle();
+        final result = await authRepository.signInWithApple();
 
-      expect(result.isRight(), true);
-      verify(() => authRepository.signInWithGoogle()).called(1);
+        expect(result.isRight(), true);
+        verify(() => mockDataSource.signInWithApple()).called(1);
+      });
+
+      test('returns Left(AuthFailure) with platform-not-supported message', () async {
+        when(() => mockDataSource.signInWithApple())
+            .thenThrow(fb_auth.FirebaseAuthException(
+          code: 'apple-sign-in-unsupported-platform',
+          message: 'Sign in with Apple is not supported on this device.',
+        ));
+
+        final result = await authRepository.signInWithApple();
+
+        expect(result.isLeft(), true);
+        result.fold(
+          (failure) {
+            expect(failure, isA<AuthFailure>());
+            expect(failure.message, contains('not supported'));
+          },
+          (_) => fail('Expected Left'),
+        );
+      });
     });
 
-    test('signInWithApple returns User on success', () async {
-      when(() => authRepository.signInWithApple())
-          .thenAnswer((_) async => const Right<Failure, User>(testUser));
+    group('signOut', () {
+      test('returns Right(null) on success', () async {
+        when(() => mockDataSource.signOut()).thenAnswer((_) async {});
 
-      final result = await authRepository.signInWithApple();
+        final result = await authRepository.signOut();
 
-      expect(result.isRight(), true);
-      verify(() => authRepository.signInWithApple()).called(1);
+        expect(result.isRight(), true);
+        verify(() => mockDataSource.signOut()).called(1);
+      });
+
+      test('returns Left(ServerFailure) on exception', () async {
+        when(() => mockDataSource.signOut())
+            .thenThrow(Exception('Sign out failed'));
+
+        final result = await authRepository.signOut();
+
+        expect(result.isLeft(), true);
+        result.fold(
+          (failure) => expect(failure, isA<ServerFailure>()),
+          (_) => fail('Expected Left'),
+        );
+      });
     });
 
-    test('signOut returns Right(null) on success', () async {
-      when(() => authRepository.signOut())
-          .thenAnswer((_) async => const Right<Failure, void>(null));
+    group('authStateChanges', () {
+      test('emits domain User when firebase user is non-null', () async {
+        final fbUser = _MockFirebaseUser();
+        when(() => fbUser.uid).thenReturn(testUid);
+        when(() => fbUser.email).thenReturn(testEmail);
+        when(() => fbUser.displayName).thenReturn(testDisplayName);
+        when(() => fbUser.photoURL).thenReturn(testPhotoUrl);
+        when(() => mockDataSource.authStateChanges())
+            .thenAnswer((_) => Stream<fb_auth.User?>.value(fbUser));
 
-      final result = await authRepository.signOut();
+        await expectLater(
+          authRepository.authStateChanges(),
+          emits(predicate<User>((user) => user.uid == testUid)),
+        );
+      });
 
-      expect(result.isRight(), true);
-      verify(() => authRepository.signOut()).called(1);
-    });
+      test('emits null when firebase user is null', () async {
+        when(() => mockDataSource.authStateChanges())
+            .thenAnswer((_) => Stream<fb_auth.User?>.value(null));
 
-    test('signOut returns Left(AuthFailure) on failure', () async {
-      when(() => authRepository.signOut())
-          .thenAnswer((_) async => const Left<Failure, void>(testFailure));
-
-      final result = await authRepository.signOut();
-
-      expect(result.isLeft(), true);
-    });
-
-    test('authStateChanges returns a stream of User?', () async {
-      when(() => authRepository.authStateChanges())
-          .thenAnswer((_) => Stream<User?>.value(null));
-
-      await expectLater(
-        authRepository.authStateChanges(),
-        emits(null),
-      );
+        await expectLater(
+          authRepository.authStateChanges(),
+          emits(null),
+        );
+      });
     });
   });
 }
+
+class _MockFirebaseUser extends Mock implements fb_auth.User {}
