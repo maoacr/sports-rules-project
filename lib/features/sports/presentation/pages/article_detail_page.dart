@@ -182,12 +182,20 @@ class _ArticleDetailPageState extends State<ArticleDetailPage> {
     if (currentlyBookmarked) {
       context.read<BookmarkBloc>().add(BookmarkRemoveRequested(widget.articleId));
     } else {
+      // Resolve the loaded article title from the ArticleBloc so the
+      // bookmark has a meaningful label, not the article id.
+      final articleState = context.read<ArticleBloc>().state;
+      final articleTitle = articleState is ArticleDetailLoaded
+          ? (articleState.article.title.isNotEmpty
+              ? articleState.article.title
+              : 'Art. ${articleState.article.number}')
+          : widget.articleId;
       context.read<BookmarkBloc>().add(
             BookmarkAddRequested(
               ruleId: widget.articleId,
               chapterId: widget.lawId ?? '',
               sportId: widget.sportId ?? '',
-              ruleTitle: widget.articleId,
+              ruleTitle: articleTitle,
               chapterTitle: lawTitle,
               sportTitle: sportTitle,
             ),

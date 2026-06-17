@@ -96,8 +96,8 @@ void main() {
           builder: (_, __) => const Scaffold(body: Text('HOME')),
         ),
         GoRoute(
-          path: '/sports/:sportId/chapters/:chapterId/rules/:ruleId',
-          builder: (_, state) => Scaffold(body: Text('RULE: ${state.pathParameters['ruleId']}')),
+          path: '/sports/:sportId/laws/:lawId/articles/:articleId',
+          builder: (_, state) => Scaffold(body: Text('RULE: ${state.pathParameters['articleId']}')),
         ),
       ],
     );

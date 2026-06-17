@@ -48,6 +48,14 @@ Future<void> main() async {
   final dir = await getApplicationDocumentsDirectory();
   final isar = await Isar.open(
     [CachedSportSchema, CachedChapterSchema, CachedRuleSchema, CachedBookmarkSchema],
+    // TODO(K-3): Isar collections still use the legacy Chapter/Rule
+    // names. The Isar schema cannot be regenerated because build_runner
+    // 2.5+ uses Dart build hooks that were removed in Dart 3.10, and
+    // isar_community_generator 3.3.2 transitively requires analyzer ^8
+    // which forces build_runner >= 2.6.0-dev. The domain layer
+    // (Law/Article/Decision) and the remote datasource (Firestore) are
+    // on v2 already; only the offline Isar cache uses the legacy
+    // names. The `SportLocalDataSource` maps between the two.
     directory: dir.path,
   );
 

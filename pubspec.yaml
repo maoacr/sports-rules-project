@@ -60,7 +60,14 @@ dev_dependencies:
   bloc_test: ^9.1.7
   mocktail: ^1.0.4
   isar_community_generator: ^3.3.2
-  build_runner: ^2.15.0
+  # Pinned to ^2.4.15. The newer 2.5+ emit an entrypoint with
+  # `// @dart=3.6` and rely on `dart compile` build hooks that
+  # were removed in Dart 3.10. isar_community_generator 3.3.2
+  # transitively requires analyzer ^8.0.0, which is incompatible
+  # with build_runner <2.6.0-dev. We do not run the generator on
+  # this SDK; the Isar `part 'isar_storage.g.dart';` file is
+  # hand-maintained. Tracked as tech debt K-3.
+  build_runner: ^2.4.15
   # Force the new frontend_server_client (4.x) which knows how to fall
   # back to the AOT snapshot that ships with Flutter 3.38+. Without
   # this override, build_runner pulls 3.x which expects the legacy

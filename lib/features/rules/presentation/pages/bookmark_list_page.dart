@@ -75,7 +75,7 @@ class BookmarkListPage extends StatelessWidget {
                         },
                       ),
                       onTap: () => context.push(
-                        '/sports/${bookmark.sportId}/chapters/${bookmark.chapterId}/rules/${bookmark.ruleId}',
+                        '/sports/${bookmark.sportId}/laws/${bookmark.chapterId}/articles/${bookmark.ruleId}',
                       ),
                     ),
                   );
