@@ -1,0 +1,44 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  build-and-test:
+    name: Analyze + test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: "3.38.7"
+          cache: true
+      - name: Show Flutter version
+        run: flutter --version
+      - name: Install dependencies
+        run: flutter pub get
+      - name: Verify build_runner output is up to date
+        # The Isar schema is committed (see .gitignore exception for
+        # lib/core/storage/isar_storage.g.dart), so if `dart run
+        # build_runner build` reports any change, that means the
+        # developer forgot to commit the regenerated schema. Fail
+        # the build to surface that.
+        run: |
+          dart run build_runner build --delete-conflicting-outputs --force-jit
+          if [ -n "$(git status --porcelain lib/core/storage/isar_storage.g.dart)" ]; then
+            echo "::error::isar_storage.g.dart is out of date. Run 'dart run build_runner build --force-jit' locally and commit the result."
+            exit 1
+          fi
+      - name: Analyze
+        run: flutter analyze
+      - name: Run tests
+        run: flutter test --reporter compact
