@@ -1,0 +1,48 @@
+/* =============================================================================
+   Sports catalog — public read, admin-only write.
+   The IFAB Laws of the Game are seeded once via scripts/import_seed.mjs using
+   the Firebase Admin SDK, which bypasses these rules. Client apps can only
+   READ the catalog (anonymous users included). Writes are always denied.
+   ============================================================================= */
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /sports/{sportId} {
+      allow read: if true;
+      allow write: if false;
+
+      match /laws/{lawId} {
+        allow read: if true;
+        allow write: if false;
+
+        match /articles/{articleId} {
+          allow read: if true;
+          allow write: if false;
+        }
+
+        match /decisions/{decisionId} {
+          allow read: if true;
+          allow write: if false;
+        }
+      }
+    }
+
+    /* =============================================================================
+       User data — fully private. Only the authenticated user can read or write
+       their own documents. Anonymous requests get denied.
+       ============================================================================= */
+    match /users/{userId} {
+      allow read, write: if request.auth != null
+        && request.auth.uid == userId;
+
+      match /bookmarks/{bookmarkId} {
+        allow read, write: if request.auth != null
+          && request.auth.uid == userId;
+      }
+
+      match /purchases/{purchaseId} {
+        allow read, write: if request.auth != null
+          && request.auth.uid == userId;
+      }
+    }
+  }
+}

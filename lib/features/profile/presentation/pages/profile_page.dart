@@ -46,12 +46,26 @@ class ProfilePage extends StatelessWidget {
                 const SizedBox(height: 32),
                 const Divider(),
                 ListTile(
+                  leading: const Icon(Icons.store),
+                  title: const Text('Store'),
+                  subtitle: const Text('Browse and buy sports'),
+                  onTap: () => context.push('/purchases'),
+                ),
+                const Divider(),
+                ListTile(
                   leading: const Icon(Icons.restore),
                   title: const Text('Restore Purchases'),
                   subtitle: const Text('Re-sync your purchases'),
                   onTap: () {
                     context.read<PurchasesBloc>().add(const RestoreRequested());
                   },
+                ),
+                const Divider(),
+                ListTile(
+                  leading: const Icon(Icons.bookmark),
+                  title: const Text('Bookmarks'),
+                  subtitle: const Text('Your saved rules'),
+                  onTap: () => context.push('/bookmarks'),
                 ),
                 const Divider(),
                 Padding(

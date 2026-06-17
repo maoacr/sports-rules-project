@@ -1,0 +1,100 @@
+{
+  "id": "law-06",
+  "sportId": "football",
+  "title": "The Other Match Officials",
+  "shortName": "Officials",
+  "number": 6,
+  "isFree": false,
+  "sportTitle": "Fútbol",
+  "summary": "Asistentes, cuarto árbitro, asistentes adicionales, asistente de reserva y miembros del equipo arbitral de vídeo (VAR y AVAR).",
+  "sourceAttribution": "Texto oficial de IFAB, Laws of the Game 2026/27 (español). https://www.theifab.com/es/",
+  "articles": [
+    {
+      "id": "law-06/art-01",
+      "lawId": "law-06",
+      "sportId": "football",
+      "number": "1",
+      "title": "Árbitros asistentes",
+      "content": "Tendrán la tarea de indicar si:\n\n• el balón ha atravesado completamente la línea de meta, incluyendo el caso de concederse el gol;\n• a qué equipo corresponde ejecutar el saque de esquina o de meta;\n• si, en la ejecución de un penal, el guardameta se separa de la línea de meta antes de que se produzca el lanzamiento y si el balón ha cruzado la línea de meta.\n\nLa labor del árbitro asistente incluye también supervisar el procedimiento de sustitución.\n\nLos árbitros asistentes podrán entrar en el terreno de juego para ayudar a que se respete la distancia de 9.15 m (10 yd).",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["asistente", "linea-meta", "saque-esquina", "saque-meta", "penal"],
+      "order": 1
+    },
+    {
+      "id": "law-06/art-02",
+      "lawId": "law-06",
+      "sportId": "football",
+      "number": "2",
+      "title": "Cuarto árbitro",
+      "content": "La labor del cuarto árbitro incluye además:\n\n• supervisar el procedimiento de sustitución;\n• comprobar el equipamiento de jugadores y suplentes;\n• permitir la vuelta al terreno de juego de un jugador después de la señal o autorización del árbitro;\n• supervisar los balones de reserva;\n• indicar la cantidad mínima de tiempo adicional que el árbitro tiene la intención de añadir al final de cada periodo (lo que incluye el tiempo suplementario);\n• comunicar al árbitro si alguna persona situada en el área técnica se comporta de forma incorrecta.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["cuarto-arbitro", "sustituciones", "equipamiento", "balon-reserva", "tiempo-adicional"],
+      "order": 2
+    },
+    {
+      "id": "law-06/art-03",
+      "lawId": "law-06",
+      "sportId": "football",
+      "number": "3",
+      "title": "Árbitros asistentes adicionales",
+      "content": "Los árbitros asistentes adicionales podrán indicar:\n\n• el balón ha salido completamente del terreno de juego y a qué equipo le corresponde efectuar el saque de esquina, de meta o de banda;\n• un jugador en posición de fuera de juego debe ser sancionado;\n• se solicita una sustitución;\n• en el lanzamiento de un tiro penal, el guardameta se separa de la línea de meta antes de ejecutar el lanzamiento y si el balón cruza la línea de meta; si se hubieran designado árbitros asistentes adicionales, el árbitro asistente deberá situarse a la altura del punto penal.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["asistente-adicional", "fuera-de-juego", "sustitucion", "penal"],
+      "order": 3
+    },
+    {
+      "id": "law-06/art-04",
+      "lawId": "law-06",
+      "sportId": "football",
+      "number": "4",
+      "title": "Árbitro asistente de reserva",
+      "content": "El árbitro asistente de reserva remplazará a un árbitro asistente, cuarto árbitro o árbitro asistente adicional que no pueda continuar con su labor, y asistirá al árbitro principal de la misma forma que los demás miembros del equipo arbitral en el terreno de juego.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["asistente-reserva", "sustitucion-arbitral"],
+      "order": 4
+    },
+    {
+      "id": "law-06/art-05",
+      "lawId": "law-06",
+      "sportId": "football",
+      "number": "5",
+      "title": "Miembros del equipo arbitral de vídeo",
+      "content": "El árbitro asistente de vídeo (VAR) es un miembro del equipo arbitral que asiste al árbitro a la hora de tomar una decisión utilizando imágenes en el caso de un «error claro, obvio y manifiesto» o de un «incidente grave inadvertido» relativo a un gol/no gol, un penal/no penal, una tarjeta roja directa (no incluida una segunda amonestación claramente incorrecta) o una confusión de identidad cuando el árbitro amonesta o expulsa al jugador equivocado del equipo infractor.\n\nEl asistente del árbitro asistente de vídeo (AVAR) es un miembro del equipo arbitral que principalmente ayuda al VAR a la hora de:\n\n• ver las imágenes de televisión mientras el VAR está llevando a cabo un chequeo o revisión;\n• registrar los incidentes relacionados con el VAR y los problemas de comunicación o de la tecnología en uso;\n• asistir en la comunicación del VAR y el árbitro, en especial cuando el VAR está chequeando o revisando la jugada, p. ej. para decirle al árbitro que detenga el juego, que retrase la reanudación, etc.;\n• llevar un registro del tiempo «perdido» mientras el juego se ha detenido para chequear o revisar la jugada;\n• informar sobre la decisión del VAR a las partes correspondientes.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["var", "avar", "video", "asistente-video"],
+      "order": 5
+    },
+    {
+      "id": "law-06/art-06",
+      "lawId": "law-06",
+      "sportId": "football",
+      "number": "6",
+      "title": "Señales del árbitro asistente",
+      "content": "Consulte las ilustraciones para conocer las señales arbitrales aprobadas.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["señales", "asistente", "ilustraciones"],
+      "order": 6
+    },
+    {
+      "id": "law-06/art-07",
+      "lawId": "law-06",
+      "sportId": "football",
+      "number": "7",
+      "title": "Señales del árbitro asistente adicional",
+      "content": "Consulte las ilustraciones para conocer las señales arbitrales aprobadas.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["señales", "asistente-adicional", "ilustraciones"],
+      "order": 7
+    }
+  ],
+  "decisions": [],
+  "imageUrls": [],
+  "imageNote": "Diagrama de señales en el PDF IFAB 2026/27 pp. 96-99. Por reproducir con atribución, no se incluye como binario."
+}

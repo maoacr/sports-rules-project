@@ -62,7 +62,7 @@ class HomePage extends StatelessWidget {
                     ),
                     title: Text(sport.title),
                     subtitle: Text(
-                      '${sport.chapterCount} chapters${sport.price > 0 ? ' • \$${(sport.price / 100).toStringAsFixed(2)}' : ' • Free'}',
+                      '${sport.lawCount} laws${sport.price > 0 ? ' • \$${(sport.price / 100).toStringAsFixed(2)}' : ' • Free'}',
                     ),
                     trailing: const Icon(Icons.chevron_right),
                     onTap: () => context.push('/sport/${sport.id}'),

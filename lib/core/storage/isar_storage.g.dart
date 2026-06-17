@@ -4696,3 +4696,1952 @@ extension CachedRuleQueryProperty
     });
   }
 }
+
+// coverage:ignore-file
+// ignore_for_file: duplicate_ignore, non_constant_identifier_names, constant_identifier_names, invalid_use_of_protected_member, unnecessary_cast, prefer_const_constructors, lines_longer_than_80_chars, require_trailing_commas, inference_failure_on_function_invocation, unnecessary_parenthesis, unnecessary_raw_strings, unnecessary_null_checks, join_return_with_assignment, prefer_final_locals, avoid_js_rounded_ints, avoid_positional_boolean_parameters, always_specify_types
+
+extension GetCachedBookmarkCollection on Isar {
+  IsarCollection<CachedBookmark> get cachedBookmarks => this.collection();
+}
+
+const CachedBookmarkSchema = CollectionSchema(
+  name: r'CachedBookmark',
+  id: -8698868919435209221,
+  properties: {
+    r'bookmarkId': PropertySchema(
+      id: 0,
+      name: r'bookmarkId',
+      type: IsarType.string,
+    ),
+    r'chapterId': PropertySchema(
+      id: 1,
+      name: r'chapterId',
+      type: IsarType.string,
+    ),
+    r'chapterTitle': PropertySchema(
+      id: 2,
+      name: r'chapterTitle',
+      type: IsarType.string,
+    ),
+    r'createdAt': PropertySchema(
+      id: 3,
+      name: r'createdAt',
+      type: IsarType.dateTime,
+    ),
+    r'ruleId': PropertySchema(
+      id: 4,
+      name: r'ruleId',
+      type: IsarType.string,
+    ),
+    r'ruleTitle': PropertySchema(
+      id: 5,
+      name: r'ruleTitle',
+      type: IsarType.string,
+    ),
+    r'sportId': PropertySchema(
+      id: 6,
+      name: r'sportId',
+      type: IsarType.string,
+    ),
+    r'sportTitle': PropertySchema(
+      id: 7,
+      name: r'sportTitle',
+      type: IsarType.string,
+    )
+  },
+  estimateSize: _cachedBookmarkEstimateSize,
+  serialize: _cachedBookmarkSerialize,
+  deserialize: _cachedBookmarkDeserialize,
+  deserializeProp: _cachedBookmarkDeserializeProp,
+  idName: r'id',
+  indexes: {
+    r'bookmarkId': IndexSchema(
+      id: 7502005763379596484,
+      name: r'bookmarkId',
+      unique: true,
+      replace: false,
+      properties: [
+        IndexPropertySchema(
+          name: r'bookmarkId',
+          type: IndexType.hash,
+          caseSensitive: true,
+        )
+      ],
+    ),
+    r'ruleId': IndexSchema(
+      id: -7287016718321404572,
+      name: r'ruleId',
+      unique: false,
+      replace: false,
+      properties: [
+        IndexPropertySchema(
+          name: r'ruleId',
+          type: IndexType.hash,
+          caseSensitive: true,
+        )
+      ],
+    ),
+    r'chapterId': IndexSchema(
+      id: -1917949875430644359,
+      name: r'chapterId',
+      unique: false,
+      replace: false,
+      properties: [
+        IndexPropertySchema(
+          name: r'chapterId',
+          type: IndexType.hash,
+          caseSensitive: true,
+        )
+      ],
+    ),
+    r'sportId': IndexSchema(
+      id: 2505824384731062745,
+      name: r'sportId',
+      unique: false,
+      replace: false,
+      properties: [
+        IndexPropertySchema(
+          name: r'sportId',
+          type: IndexType.hash,
+          caseSensitive: true,
+        )
+      ],
+    )
+  },
+  links: {},
+  embeddedSchemas: {},
+  getId: _cachedBookmarkGetId,
+  getLinks: _cachedBookmarkGetLinks,
+  attach: _cachedBookmarkAttach,
+  version: '3.3.2',
+);
+
+int _cachedBookmarkEstimateSize(
+  CachedBookmark object,
+  List<int> offsets,
+  Map<Type, List<int>> allOffsets,
+) {
+  var bytesCount = offsets.last;
+  bytesCount += 3 + object.bookmarkId.length * 3;
+  bytesCount += 3 + object.chapterId.length * 3;
+  bytesCount += 3 + object.chapterTitle.length * 3;
+  bytesCount += 3 + object.ruleId.length * 3;
+  bytesCount += 3 + object.ruleTitle.length * 3;
+  bytesCount += 3 + object.sportId.length * 3;
+  bytesCount += 3 + object.sportTitle.length * 3;
+  return bytesCount;
+}
+
+void _cachedBookmarkSerialize(
+  CachedBookmark object,
+  IsarWriter writer,
+  List<int> offsets,
+  Map<Type, List<int>> allOffsets,
+) {
+  writer.writeString(offsets[0], object.bookmarkId);
+  writer.writeString(offsets[1], object.chapterId);
+  writer.writeString(offsets[2], object.chapterTitle);
+  writer.writeDateTime(offsets[3], object.createdAt);
+  writer.writeString(offsets[4], object.ruleId);
+  writer.writeString(offsets[5], object.ruleTitle);
+  writer.writeString(offsets[6], object.sportId);
+  writer.writeString(offsets[7], object.sportTitle);
+}
+
+CachedBookmark _cachedBookmarkDeserialize(
+  Id id,
+  IsarReader reader,
+  List<int> offsets,
+  Map<Type, List<int>> allOffsets,
+) {
+  final object = CachedBookmark();
+  object.bookmarkId = reader.readString(offsets[0]);
+  object.chapterId = reader.readString(offsets[1]);
+  object.chapterTitle = reader.readString(offsets[2]);
+  object.createdAt = reader.readDateTime(offsets[3]);
+  object.id = id;
+  object.ruleId = reader.readString(offsets[4]);
+  object.ruleTitle = reader.readString(offsets[5]);
+  object.sportId = reader.readString(offsets[6]);
+  object.sportTitle = reader.readString(offsets[7]);
+  return object;
+}
+
+P _cachedBookmarkDeserializeProp<P>(
+  IsarReader reader,
+  int propertyId,
+  int offset,
+  Map<Type, List<int>> allOffsets,
+) {
+  switch (propertyId) {
+    case 0:
+      return (reader.readString(offset)) as P;
+    case 1:
+      return (reader.readString(offset)) as P;
+    case 2:
+      return (reader.readString(offset)) as P;
+    case 3:
+      return (reader.readDateTime(offset)) as P;
+    case 4:
+      return (reader.readString(offset)) as P;
+    case 5:
+      return (reader.readString(offset)) as P;
+    case 6:
+      return (reader.readString(offset)) as P;
+    case 7:
+      return (reader.readString(offset)) as P;
+    default:
+      throw IsarError('Unknown property with id $propertyId');
+  }
+}
+
+Id _cachedBookmarkGetId(CachedBookmark object) {
+  return object.id;
+}
+
+List<IsarLinkBase<dynamic>> _cachedBookmarkGetLinks(CachedBookmark object) {
+  return [];
+}
+
+void _cachedBookmarkAttach(
+    IsarCollection<dynamic> col, Id id, CachedBookmark object) {
+  object.id = id;
+}
+
+extension CachedBookmarkByIndex on IsarCollection<CachedBookmark> {
+  Future<CachedBookmark?> getByBookmarkId(String bookmarkId) {
+    return getByIndex(r'bookmarkId', [bookmarkId]);
+  }
+
+  CachedBookmark? getByBookmarkIdSync(String bookmarkId) {
+    return getByIndexSync(r'bookmarkId', [bookmarkId]);
+  }
+
+  Future<bool> deleteByBookmarkId(String bookmarkId) {
+    return deleteByIndex(r'bookmarkId', [bookmarkId]);
+  }
+
+  bool deleteByBookmarkIdSync(String bookmarkId) {
+    return deleteByIndexSync(r'bookmarkId', [bookmarkId]);
+  }
+
+  Future<List<CachedBookmark?>> getAllByBookmarkId(
+      List<String> bookmarkIdValues) {
+    final values = bookmarkIdValues.map((e) => [e]).toList();
+    return getAllByIndex(r'bookmarkId', values);
+  }
+
+  List<CachedBookmark?> getAllByBookmarkIdSync(List<String> bookmarkIdValues) {
+    final values = bookmarkIdValues.map((e) => [e]).toList();
+    return getAllByIndexSync(r'bookmarkId', values);
+  }
+
+  Future<int> deleteAllByBookmarkId(List<String> bookmarkIdValues) {
+    final values = bookmarkIdValues.map((e) => [e]).toList();
+    return deleteAllByIndex(r'bookmarkId', values);
+  }
+
+  int deleteAllByBookmarkIdSync(List<String> bookmarkIdValues) {
+    final values = bookmarkIdValues.map((e) => [e]).toList();
+    return deleteAllByIndexSync(r'bookmarkId', values);
+  }
+
+  Future<Id> putByBookmarkId(CachedBookmark object) {
+    return putByIndex(r'bookmarkId', object);
+  }
+
+  Id putByBookmarkIdSync(CachedBookmark object, {bool saveLinks = true}) {
+    return putByIndexSync(r'bookmarkId', object, saveLinks: saveLinks);
+  }
+
+  Future<List<Id>> putAllByBookmarkId(List<CachedBookmark> objects) {
+    return putAllByIndex(r'bookmarkId', objects);
+  }
+
+  List<Id> putAllByBookmarkIdSync(List<CachedBookmark> objects,
+      {bool saveLinks = true}) {
+    return putAllByIndexSync(r'bookmarkId', objects, saveLinks: saveLinks);
+  }
+}
+
+extension CachedBookmarkQueryWhereSort
+    on QueryBuilder<CachedBookmark, CachedBookmark, QWhere> {
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterWhere> anyId() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addWhereClause(const IdWhereClause.any());
+    });
+  }
+}
+
+extension CachedBookmarkQueryWhere
+    on QueryBuilder<CachedBookmark, CachedBookmark, QWhereClause> {
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterWhereClause> idEqualTo(
+      Id id) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addWhereClause(IdWhereClause.between(
+        lower: id,
+        upper: id,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterWhereClause> idNotEqualTo(
+      Id id) {
+    return QueryBuilder.apply(this, (query) {
+      if (query.whereSort == Sort.asc) {
+        return query
+            .addWhereClause(
+              IdWhereClause.lessThan(upper: id, includeUpper: false),
+            )
+            .addWhereClause(
+              IdWhereClause.greaterThan(lower: id, includeLower: false),
+            );
+      } else {
+        return query
+            .addWhereClause(
+              IdWhereClause.greaterThan(lower: id, includeLower: false),
+            )
+            .addWhereClause(
+              IdWhereClause.lessThan(upper: id, includeUpper: false),
+            );
+      }
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterWhereClause> idGreaterThan(
+      Id id,
+      {bool include = false}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addWhereClause(
+        IdWhereClause.greaterThan(lower: id, includeLower: include),
+      );
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterWhereClause> idLessThan(
+      Id id,
+      {bool include = false}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addWhereClause(
+        IdWhereClause.lessThan(upper: id, includeUpper: include),
+      );
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterWhereClause> idBetween(
+    Id lowerId,
+    Id upperId, {
+    bool includeLower = true,
+    bool includeUpper = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addWhereClause(IdWhereClause.between(
+        lower: lowerId,
+        includeLower: includeLower,
+        upper: upperId,
+        includeUpper: includeUpper,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterWhereClause>
+      bookmarkIdEqualTo(String bookmarkId) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addWhereClause(IndexWhereClause.equalTo(
+        indexName: r'bookmarkId',
+        value: [bookmarkId],
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterWhereClause>
+      bookmarkIdNotEqualTo(String bookmarkId) {
+    return QueryBuilder.apply(this, (query) {
+      if (query.whereSort == Sort.asc) {
+        return query
+            .addWhereClause(IndexWhereClause.between(
+              indexName: r'bookmarkId',
+              lower: [],
+              upper: [bookmarkId],
+              includeUpper: false,
+            ))
+            .addWhereClause(IndexWhereClause.between(
+              indexName: r'bookmarkId',
+              lower: [bookmarkId],
+              includeLower: false,
+              upper: [],
+            ));
+      } else {
+        return query
+            .addWhereClause(IndexWhereClause.between(
+              indexName: r'bookmarkId',
+              lower: [bookmarkId],
+              includeLower: false,
+              upper: [],
+            ))
+            .addWhereClause(IndexWhereClause.between(
+              indexName: r'bookmarkId',
+              lower: [],
+              upper: [bookmarkId],
+              includeUpper: false,
+            ));
+      }
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterWhereClause> ruleIdEqualTo(
+      String ruleId) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addWhereClause(IndexWhereClause.equalTo(
+        indexName: r'ruleId',
+        value: [ruleId],
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterWhereClause>
+      ruleIdNotEqualTo(String ruleId) {
+    return QueryBuilder.apply(this, (query) {
+      if (query.whereSort == Sort.asc) {
+        return query
+            .addWhereClause(IndexWhereClause.between(
+              indexName: r'ruleId',
+              lower: [],
+              upper: [ruleId],
+              includeUpper: false,
+            ))
+            .addWhereClause(IndexWhereClause.between(
+              indexName: r'ruleId',
+              lower: [ruleId],
+              includeLower: false,
+              upper: [],
+            ));
+      } else {
+        return query
+            .addWhereClause(IndexWhereClause.between(
+              indexName: r'ruleId',
+              lower: [ruleId],
+              includeLower: false,
+              upper: [],
+            ))
+            .addWhereClause(IndexWhereClause.between(
+              indexName: r'ruleId',
+              lower: [],
+              upper: [ruleId],
+              includeUpper: false,
+            ));
+      }
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterWhereClause>
+      chapterIdEqualTo(String chapterId) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addWhereClause(IndexWhereClause.equalTo(
+        indexName: r'chapterId',
+        value: [chapterId],
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterWhereClause>
+      chapterIdNotEqualTo(String chapterId) {
+    return QueryBuilder.apply(this, (query) {
+      if (query.whereSort == Sort.asc) {
+        return query
+            .addWhereClause(IndexWhereClause.between(
+              indexName: r'chapterId',
+              lower: [],
+              upper: [chapterId],
+              includeUpper: false,
+            ))
+            .addWhereClause(IndexWhereClause.between(
+              indexName: r'chapterId',
+              lower: [chapterId],
+              includeLower: false,
+              upper: [],
+            ));
+      } else {
+        return query
+            .addWhereClause(IndexWhereClause.between(
+              indexName: r'chapterId',
+              lower: [chapterId],
+              includeLower: false,
+              upper: [],
+            ))
+            .addWhereClause(IndexWhereClause.between(
+              indexName: r'chapterId',
+              lower: [],
+              upper: [chapterId],
+              includeUpper: false,
+            ));
+      }
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterWhereClause>
+      sportIdEqualTo(String sportId) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addWhereClause(IndexWhereClause.equalTo(
+        indexName: r'sportId',
+        value: [sportId],
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterWhereClause>
+      sportIdNotEqualTo(String sportId) {
+    return QueryBuilder.apply(this, (query) {
+      if (query.whereSort == Sort.asc) {
+        return query
+            .addWhereClause(IndexWhereClause.between(
+              indexName: r'sportId',
+              lower: [],
+              upper: [sportId],
+              includeUpper: false,
+            ))
+            .addWhereClause(IndexWhereClause.between(
+              indexName: r'sportId',
+              lower: [sportId],
+              includeLower: false,
+              upper: [],
+            ));
+      } else {
+        return query
+            .addWhereClause(IndexWhereClause.between(
+              indexName: r'sportId',
+              lower: [sportId],
+              includeLower: false,
+              upper: [],
+            ))
+            .addWhereClause(IndexWhereClause.between(
+              indexName: r'sportId',
+              lower: [],
+              upper: [sportId],
+              includeUpper: false,
+            ));
+      }
+    });
+  }
+}
+
+extension CachedBookmarkQueryFilter
+    on QueryBuilder<CachedBookmark, CachedBookmark, QFilterCondition> {
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      bookmarkIdEqualTo(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'bookmarkId',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      bookmarkIdGreaterThan(
+    String value, {
+    bool include = false,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        include: include,
+        property: r'bookmarkId',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      bookmarkIdLessThan(
+    String value, {
+    bool include = false,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.lessThan(
+        include: include,
+        property: r'bookmarkId',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      bookmarkIdBetween(
+    String lower,
+    String upper, {
+    bool includeLower = true,
+    bool includeUpper = true,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.between(
+        property: r'bookmarkId',
+        lower: lower,
+        includeLower: includeLower,
+        upper: upper,
+        includeUpper: includeUpper,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      bookmarkIdStartsWith(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.startsWith(
+        property: r'bookmarkId',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      bookmarkIdEndsWith(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.endsWith(
+        property: r'bookmarkId',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      bookmarkIdContains(String value, {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.contains(
+        property: r'bookmarkId',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      bookmarkIdMatches(String pattern, {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.matches(
+        property: r'bookmarkId',
+        wildcard: pattern,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      bookmarkIdIsEmpty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'bookmarkId',
+        value: '',
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      bookmarkIdIsNotEmpty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        property: r'bookmarkId',
+        value: '',
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      chapterIdEqualTo(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'chapterId',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      chapterIdGreaterThan(
+    String value, {
+    bool include = false,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        include: include,
+        property: r'chapterId',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      chapterIdLessThan(
+    String value, {
+    bool include = false,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.lessThan(
+        include: include,
+        property: r'chapterId',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      chapterIdBetween(
+    String lower,
+    String upper, {
+    bool includeLower = true,
+    bool includeUpper = true,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.between(
+        property: r'chapterId',
+        lower: lower,
+        includeLower: includeLower,
+        upper: upper,
+        includeUpper: includeUpper,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      chapterIdStartsWith(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.startsWith(
+        property: r'chapterId',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      chapterIdEndsWith(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.endsWith(
+        property: r'chapterId',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      chapterIdContains(String value, {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.contains(
+        property: r'chapterId',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      chapterIdMatches(String pattern, {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.matches(
+        property: r'chapterId',
+        wildcard: pattern,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      chapterIdIsEmpty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'chapterId',
+        value: '',
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      chapterIdIsNotEmpty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        property: r'chapterId',
+        value: '',
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      chapterTitleEqualTo(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'chapterTitle',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      chapterTitleGreaterThan(
+    String value, {
+    bool include = false,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        include: include,
+        property: r'chapterTitle',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      chapterTitleLessThan(
+    String value, {
+    bool include = false,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.lessThan(
+        include: include,
+        property: r'chapterTitle',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      chapterTitleBetween(
+    String lower,
+    String upper, {
+    bool includeLower = true,
+    bool includeUpper = true,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.between(
+        property: r'chapterTitle',
+        lower: lower,
+        includeLower: includeLower,
+        upper: upper,
+        includeUpper: includeUpper,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      chapterTitleStartsWith(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.startsWith(
+        property: r'chapterTitle',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      chapterTitleEndsWith(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.endsWith(
+        property: r'chapterTitle',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      chapterTitleContains(String value, {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.contains(
+        property: r'chapterTitle',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      chapterTitleMatches(String pattern, {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.matches(
+        property: r'chapterTitle',
+        wildcard: pattern,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      chapterTitleIsEmpty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'chapterTitle',
+        value: '',
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      chapterTitleIsNotEmpty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        property: r'chapterTitle',
+        value: '',
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      createdAtEqualTo(DateTime value) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'createdAt',
+        value: value,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      createdAtGreaterThan(
+    DateTime value, {
+    bool include = false,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        include: include,
+        property: r'createdAt',
+        value: value,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      createdAtLessThan(
+    DateTime value, {
+    bool include = false,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.lessThan(
+        include: include,
+        property: r'createdAt',
+        value: value,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      createdAtBetween(
+    DateTime lower,
+    DateTime upper, {
+    bool includeLower = true,
+    bool includeUpper = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.between(
+        property: r'createdAt',
+        lower: lower,
+        includeLower: includeLower,
+        upper: upper,
+        includeUpper: includeUpper,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition> idEqualTo(
+      Id value) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'id',
+        value: value,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      idGreaterThan(
+    Id value, {
+    bool include = false,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        include: include,
+        property: r'id',
+        value: value,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      idLessThan(
+    Id value, {
+    bool include = false,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.lessThan(
+        include: include,
+        property: r'id',
+        value: value,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition> idBetween(
+    Id lower,
+    Id upper, {
+    bool includeLower = true,
+    bool includeUpper = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.between(
+        property: r'id',
+        lower: lower,
+        includeLower: includeLower,
+        upper: upper,
+        includeUpper: includeUpper,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      ruleIdEqualTo(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'ruleId',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      ruleIdGreaterThan(
+    String value, {
+    bool include = false,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        include: include,
+        property: r'ruleId',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      ruleIdLessThan(
+    String value, {
+    bool include = false,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.lessThan(
+        include: include,
+        property: r'ruleId',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      ruleIdBetween(
+    String lower,
+    String upper, {
+    bool includeLower = true,
+    bool includeUpper = true,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.between(
+        property: r'ruleId',
+        lower: lower,
+        includeLower: includeLower,
+        upper: upper,
+        includeUpper: includeUpper,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      ruleIdStartsWith(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.startsWith(
+        property: r'ruleId',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      ruleIdEndsWith(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.endsWith(
+        property: r'ruleId',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      ruleIdContains(String value, {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.contains(
+        property: r'ruleId',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      ruleIdMatches(String pattern, {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.matches(
+        property: r'ruleId',
+        wildcard: pattern,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      ruleIdIsEmpty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'ruleId',
+        value: '',
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      ruleIdIsNotEmpty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        property: r'ruleId',
+        value: '',
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      ruleTitleEqualTo(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'ruleTitle',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      ruleTitleGreaterThan(
+    String value, {
+    bool include = false,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        include: include,
+        property: r'ruleTitle',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      ruleTitleLessThan(
+    String value, {
+    bool include = false,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.lessThan(
+        include: include,
+        property: r'ruleTitle',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      ruleTitleBetween(
+    String lower,
+    String upper, {
+    bool includeLower = true,
+    bool includeUpper = true,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.between(
+        property: r'ruleTitle',
+        lower: lower,
+        includeLower: includeLower,
+        upper: upper,
+        includeUpper: includeUpper,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      ruleTitleStartsWith(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.startsWith(
+        property: r'ruleTitle',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      ruleTitleEndsWith(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.endsWith(
+        property: r'ruleTitle',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      ruleTitleContains(String value, {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.contains(
+        property: r'ruleTitle',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      ruleTitleMatches(String pattern, {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.matches(
+        property: r'ruleTitle',
+        wildcard: pattern,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      ruleTitleIsEmpty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'ruleTitle',
+        value: '',
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      ruleTitleIsNotEmpty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        property: r'ruleTitle',
+        value: '',
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      sportIdEqualTo(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'sportId',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      sportIdGreaterThan(
+    String value, {
+    bool include = false,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        include: include,
+        property: r'sportId',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      sportIdLessThan(
+    String value, {
+    bool include = false,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.lessThan(
+        include: include,
+        property: r'sportId',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      sportIdBetween(
+    String lower,
+    String upper, {
+    bool includeLower = true,
+    bool includeUpper = true,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.between(
+        property: r'sportId',
+        lower: lower,
+        includeLower: includeLower,
+        upper: upper,
+        includeUpper: includeUpper,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      sportIdStartsWith(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.startsWith(
+        property: r'sportId',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      sportIdEndsWith(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.endsWith(
+        property: r'sportId',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      sportIdContains(String value, {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.contains(
+        property: r'sportId',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      sportIdMatches(String pattern, {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.matches(
+        property: r'sportId',
+        wildcard: pattern,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      sportIdIsEmpty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'sportId',
+        value: '',
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      sportIdIsNotEmpty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        property: r'sportId',
+        value: '',
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      sportTitleEqualTo(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'sportTitle',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      sportTitleGreaterThan(
+    String value, {
+    bool include = false,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        include: include,
+        property: r'sportTitle',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      sportTitleLessThan(
+    String value, {
+    bool include = false,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.lessThan(
+        include: include,
+        property: r'sportTitle',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      sportTitleBetween(
+    String lower,
+    String upper, {
+    bool includeLower = true,
+    bool includeUpper = true,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.between(
+        property: r'sportTitle',
+        lower: lower,
+        includeLower: includeLower,
+        upper: upper,
+        includeUpper: includeUpper,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      sportTitleStartsWith(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.startsWith(
+        property: r'sportTitle',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      sportTitleEndsWith(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.endsWith(
+        property: r'sportTitle',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      sportTitleContains(String value, {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.contains(
+        property: r'sportTitle',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      sportTitleMatches(String pattern, {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.matches(
+        property: r'sportTitle',
+        wildcard: pattern,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      sportTitleIsEmpty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'sportTitle',
+        value: '',
+      ));
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterFilterCondition>
+      sportTitleIsNotEmpty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        property: r'sportTitle',
+        value: '',
+      ));
+    });
+  }
+}
+
+extension CachedBookmarkQueryObject
+    on QueryBuilder<CachedBookmark, CachedBookmark, QFilterCondition> {}
+
+extension CachedBookmarkQueryLinks
+    on QueryBuilder<CachedBookmark, CachedBookmark, QFilterCondition> {}
+
+extension CachedBookmarkQuerySortBy
+    on QueryBuilder<CachedBookmark, CachedBookmark, QSortBy> {
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterSortBy>
+      sortByBookmarkId() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'bookmarkId', Sort.asc);
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterSortBy>
+      sortByBookmarkIdDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'bookmarkId', Sort.desc);
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterSortBy> sortByChapterId() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'chapterId', Sort.asc);
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterSortBy>
+      sortByChapterIdDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'chapterId', Sort.desc);
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterSortBy>
+      sortByChapterTitle() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'chapterTitle', Sort.asc);
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterSortBy>
+      sortByChapterTitleDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'chapterTitle', Sort.desc);
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterSortBy> sortByCreatedAt() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'createdAt', Sort.asc);
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterSortBy>
+      sortByCreatedAtDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'createdAt', Sort.desc);
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterSortBy> sortByRuleId() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'ruleId', Sort.asc);
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterSortBy>
+      sortByRuleIdDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'ruleId', Sort.desc);
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterSortBy> sortByRuleTitle() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'ruleTitle', Sort.asc);
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterSortBy>
+      sortByRuleTitleDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'ruleTitle', Sort.desc);
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterSortBy> sortBySportId() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'sportId', Sort.asc);
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterSortBy>
+      sortBySportIdDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'sportId', Sort.desc);
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterSortBy>
+      sortBySportTitle() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'sportTitle', Sort.asc);
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterSortBy>
+      sortBySportTitleDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'sportTitle', Sort.desc);
+    });
+  }
+}
+
+extension CachedBookmarkQuerySortThenBy
+    on QueryBuilder<CachedBookmark, CachedBookmark, QSortThenBy> {
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterSortBy>
+      thenByBookmarkId() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'bookmarkId', Sort.asc);
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterSortBy>
+      thenByBookmarkIdDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'bookmarkId', Sort.desc);
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterSortBy> thenByChapterId() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'chapterId', Sort.asc);
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterSortBy>
+      thenByChapterIdDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'chapterId', Sort.desc);
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterSortBy>
+      thenByChapterTitle() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'chapterTitle', Sort.asc);
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterSortBy>
+      thenByChapterTitleDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'chapterTitle', Sort.desc);
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterSortBy> thenByCreatedAt() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'createdAt', Sort.asc);
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterSortBy>
+      thenByCreatedAtDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'createdAt', Sort.desc);
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterSortBy> thenById() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'id', Sort.asc);
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterSortBy> thenByIdDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'id', Sort.desc);
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterSortBy> thenByRuleId() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'ruleId', Sort.asc);
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterSortBy>
+      thenByRuleIdDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'ruleId', Sort.desc);
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterSortBy> thenByRuleTitle() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'ruleTitle', Sort.asc);
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterSortBy>
+      thenByRuleTitleDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'ruleTitle', Sort.desc);
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterSortBy> thenBySportId() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'sportId', Sort.asc);
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterSortBy>
+      thenBySportIdDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'sportId', Sort.desc);
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterSortBy>
+      thenBySportTitle() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'sportTitle', Sort.asc);
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QAfterSortBy>
+      thenBySportTitleDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'sportTitle', Sort.desc);
+    });
+  }
+}
+
+extension CachedBookmarkQueryWhereDistinct
+    on QueryBuilder<CachedBookmark, CachedBookmark, QDistinct> {
+  QueryBuilder<CachedBookmark, CachedBookmark, QDistinct> distinctByBookmarkId(
+      {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addDistinctBy(r'bookmarkId', caseSensitive: caseSensitive);
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QDistinct> distinctByChapterId(
+      {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addDistinctBy(r'chapterId', caseSensitive: caseSensitive);
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QDistinct>
+      distinctByChapterTitle({bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addDistinctBy(r'chapterTitle', caseSensitive: caseSensitive);
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QDistinct>
+      distinctByCreatedAt() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addDistinctBy(r'createdAt');
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QDistinct> distinctByRuleId(
+      {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addDistinctBy(r'ruleId', caseSensitive: caseSensitive);
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QDistinct> distinctByRuleTitle(
+      {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addDistinctBy(r'ruleTitle', caseSensitive: caseSensitive);
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QDistinct> distinctBySportId(
+      {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addDistinctBy(r'sportId', caseSensitive: caseSensitive);
+    });
+  }
+
+  QueryBuilder<CachedBookmark, CachedBookmark, QDistinct> distinctBySportTitle(
+      {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addDistinctBy(r'sportTitle', caseSensitive: caseSensitive);
+    });
+  }
+}
+
+extension CachedBookmarkQueryProperty
+    on QueryBuilder<CachedBookmark, CachedBookmark, QQueryProperty> {
+  QueryBuilder<CachedBookmark, int, QQueryOperations> idProperty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addPropertyName(r'id');
+    });
+  }
+
+  QueryBuilder<CachedBookmark, String, QQueryOperations> bookmarkIdProperty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addPropertyName(r'bookmarkId');
+    });
+  }
+
+  QueryBuilder<CachedBookmark, String, QQueryOperations> chapterIdProperty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addPropertyName(r'chapterId');
+    });
+  }
+
+  QueryBuilder<CachedBookmark, String, QQueryOperations>
+      chapterTitleProperty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addPropertyName(r'chapterTitle');
+    });
+  }
+
+  QueryBuilder<CachedBookmark, DateTime, QQueryOperations> createdAtProperty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addPropertyName(r'createdAt');
+    });
+  }
+
+  QueryBuilder<CachedBookmark, String, QQueryOperations> ruleIdProperty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addPropertyName(r'ruleId');
+    });
+  }
+
+  QueryBuilder<CachedBookmark, String, QQueryOperations> ruleTitleProperty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addPropertyName(r'ruleTitle');
+    });
+  }
+
+  QueryBuilder<CachedBookmark, String, QQueryOperations> sportIdProperty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addPropertyName(r'sportId');
+    });
+  }
+
+  QueryBuilder<CachedBookmark, String, QQueryOperations> sportTitleProperty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addPropertyName(r'sportTitle');
+    });
+  }
+}

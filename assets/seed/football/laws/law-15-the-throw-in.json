@@ -1,0 +1,40 @@
+{
+  "id": "law-15",
+  "sportId": "football",
+  "title": "The Throw-in",
+  "shortName": "Throw-in",
+  "number": 15,
+  "isFree": false,
+  "sportTitle": "Fútbol",
+  "summary": "Procedimiento del saque de banda (línea de banda, dos manos desde atrás de la cabeza) y sanciones por infracción.",
+  "sourceAttribution": "Texto oficial de IFAB, Laws of the Game 2026/27 (español). https://www.theifab.com/es/",
+  "articles": [
+    {
+      "id": "law-15/art-01",
+      "lawId": "law-15",
+      "sportId": "football",
+      "number": "1",
+      "title": "Procedimiento",
+      "content": "Al ejecutar el saque de banda, el lanzador deberá:\n\n• estar de pie frente al terreno de juego;\n• pisar la línea de banda con los dos pies —aunque sea parcialmente— o estar situado por fuera de la misma;\n• lanzar el balón con ambas manos desde atrás y por encima de la cabeza desde el lugar en que el balón haya salido del terreno de juego.\n\nTodos los adversarios deberán permanecer a una distancia mínima de 2 m (2 yd) del lugar de la línea de banda donde se vaya a ejecutar el saque.\n\nEl balón estará en juego tan pronto como haya entrado en el terreno de juego. Si el balón tocara el suelo antes de entrar en el terreno de juego, se repetirá el saque de banda desde la misma posición. Si no se ejecutase correctamente, sacará de banda el equipo adversario.\n\nSi durante la ejecución correcta de un saque de banda el ejecutor lanzara voluntariamente el balón contra un adversario con la intención de jugarlo de nuevo, pero no lo hace de manera imprudente, temeraria, ni empleando una fuerza excesiva, el árbitro permitirá que continúe el juego.\n\nEl ejecutor del saque no podrá volver a jugar el balón hasta que lo haya tocado otro jugador.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["saque-de-banda", "procedimiento", "linea-de-banda", "2m", "dos-manos"],
+      "order": 1
+    },
+    {
+      "id": "law-15/art-02",
+      "lawId": "law-15",
+      "sportId": "football",
+      "number": "2",
+      "title": "Infracciones y sanciones",
+      "content": "Si un jugador retrasa injustamente la ejecución de un saque de banda de su equipo, el árbitro hará sonar el silbato y señalará el comienzo de la cuenta atrás de cinco segundos. El árbitro efectuará la señal de la cuenta atrás de cinco segundos con la mano levantada y, si el saque de banda no se ha efectuado antes del final de los cinco segundos, se le concederá al equipo adversario. Se amonestará al infractor solo si retrasa excesivamente la reanudación después de que se haya concedido el saque de banda al equipo adversario*.\n\nSi, una vez que el balón esté en juego, el jugador que ha realizado el saque volviera a tocarlo antes de que lo haga otro jugador, se concederá un libre indirecto. En caso de que el ejecutor del saque cometa una infracción por mano:\n• se concederá un libre directo o\n• se concederá un tiro penal si la infracción se cometió dentro de su área, a menos que fuera el guardameta del equipo defensor, en cuyo caso se concederá un libre indirecto.\n\nAquel adversario que distraiga u obstaculice de forma antirreglamentaria al ejecutor del saque de banda (lo que incluye estar situado a menos de 2 m [2 yd] del lugar donde se ejecuta el saque) será amonestado por conducta antideportiva. En caso de que ya se haya ejecutado el saque, se concederá un libre indirecto.\n\nSi se cometiera cualquier otra infracción de esta regla, sacará de banda un jugador del equipo adversario.\n\n*Véase el «Protocolo de la cuenta atrás para el saque de banda y el saque de meta» en la sección «Observaciones y adaptaciones».",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["saque-de-banda", "infraccion", "cuenta-atras", "5-segundos", "amonestacion"],
+      "order": 2
+    }
+  ],
+  "decisions": [],
+  "imageUrls": [],
+  "imageNote": "Sin diagramas en esta ley."
+}

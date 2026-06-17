@@ -1,0 +1,52 @@
+{
+  "id": "law-10",
+  "sportId": "football",
+  "title": "Determining the Outcome of a Match",
+  "shortName": "Result",
+  "number": 10,
+  "isFree": false,
+  "sportTitle": "Fútbol",
+  "summary": "Gol válido, equipo ganador, procedimiento de la tanda de penales.",
+  "sourceAttribution": "Texto oficial de IFAB, Laws of the Game 2026/27 (español). https://www.theifab.com/es/",
+  "articles": [
+    {
+      "id": "law-10/art-01",
+      "lawId": "law-10",
+      "sportId": "football",
+      "number": "1",
+      "title": "Gol válido",
+      "content": "Se considerará válido un gol cuando el balón haya atravesado completamente la línea de meta entre los postes y por debajo del travesaño, siempre que el equipo que marcó el gol no haya cometido previamente una falta o infracción de las Reglas de Juego.\n\nSi el guardameta lanza el balón con la mano y este entra en la portería contraria directamente, se concederá saque de meta.\n\nSi el árbitro señalara un gol antes de que el balón hubiera traspasado completamente la línea de meta, el juego se reanudará con un balón a tierra.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["gol", "valido", "linea-meta", "porteria"],
+      "order": 1
+    },
+    {
+      "id": "law-10/art-02",
+      "lawId": "law-10",
+      "sportId": "football",
+      "number": "2",
+      "title": "Equipo ganador",
+      "content": "El equipo que haya marcado el mayor número de goles será el ganador. Si ambos equipos marcan el mismo número de goles o no marcan ninguno, el partido terminará en empate.\n\nSi el reglamento de la competición exigiera que se declare un equipo ganador después de un partido empatado o una eliminatoria que finaliza en empate, se permitirán únicamente los siguientes procedimientos para determinar el vencedor:\n\n• regla de goles marcados fuera de casa;\n• dos periodos de igual duración de tiempo suplementario que no excedan los 15 minutos cada uno;\n• tanda de penales.\n\nSe podrán combinar varios de los procedimientos anteriores.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["ganador", "empate", "prorroga", "tanda-penales", "goles-fuera-casa"],
+      "order": 2
+    },
+    {
+      "id": "law-10/art-03",
+      "lawId": "law-10",
+      "sportId": "football",
+      "number": "3",
+      "title": "Tanda de penales",
+      "content": "La tanda de penales se ejecutará una vez terminado el partido y, a menos que se estipule algo diferente, se aplicarán las Reglas de Juego correspondientes. Los jugadores expulsados a lo largo del partido no podrán participar en la tanda de penales. Por otro lado, las advertencias y amonestaciones impuestas a jugadores y miembros del cuerpo técnico durante el encuentro no se tendrán en consideración en la tanda de penales.\n\nProcedimiento\nAntes de la tanda de penales\n\n• A menos que deban tenerse en cuenta otras consideraciones (p. ej. estado del terreno de juego, seguridad, etc.), el árbitro realizará un sorteo mediante el lanzamiento de una moneda al aire para decidir la portería en la que se desarrollará la tanda; esta decisión únicamente podrá modificarse por motivos de seguridad, si la portería no estuviera en condiciones o esa zona del terreno de juego estuviera impracticable.\n• El árbitro realizará un nuevo sorteo con una moneda y el equipo que resulte favorecido decidirá si ejecutará el primer o el segundo lanzamiento.\n• Con la única excepción del suplente de un guardameta que no pueda continuar, solamente estarán autorizados a participar en la tanda de penales aquellos jugadores que al final del partido se encuentren en el terreno de juego, o aquellos que se encuentren momentáneamente fuera del mismo por lesión, cambios en el equipamiento, etc.\n• Cada uno de los equipos se encargará de decidir el orden en el que ejecutará los lanzamientos. No se informará del orden al árbitro.\n• Si, al finalizar el partido y antes de la tanda de penales o durante la misma, un equipo tiene más jugadores que su adversario, deberá reducir su número para equipararlo al del equipo rival, y se informará al árbitro del nombre y el número de los jugadores excluidos. Ninguno de ellos podrá participar en la tanda (salvo en el caso descrito a continuación).\n• Aquel guardameta que no se encuentre en condiciones de continuar antes de o durante la tanda podrá ser reemplazado por un jugador excluido para igualar el número de jugadores o, si su equipo no ha utilizado el número máximo permitido de sustituciones, por un suplente designado como tal en la lista oficial, pero el guardameta reemplazado ya no podrá participar en la tanda ni podrá ejecutar lanzamiento alguno.\n• Si el guardameta hubiera ejecutado ya un lanzamiento, el suplente no podrá ejecutar otro hasta la siguiente tanda de penales.\n\nEjecución de la tanda de penales\n\n• Solamente podrán permanecer en el terreno de juego los jugadores autorizados para participar en la tanda de penales y los miembros del equipo arbitral.\n• Todos los jugadores autorizados para participar en la tanda de penales, excepto el lanzador y los dos guardametas, deberán permanecer en el interior del círculo central.\n• El guardameta del equipo ejecutor del lanzamiento deberá permanecer en el terreno de juego, fuera del área penal, en la intersección de la línea de meta con la línea de demarcación del área penal.\n• Cualquiera de los jugadores autorizados para participar en la tanda de penales podrá intercambiar su puesto con el guardameta.\n• Se considerará que el penal se ha completado cuando el balón deje de moverse, deje de estar en juego o el árbitro detenga el juego por una infracción; el lanzador no podrá jugar intencionadamente el balón por segunda vez.\n• Si el lanzador golpea el balón de manera involuntaria con los dos pies simultáneamente o el balón le toca el pie o la pierna de apoyo justo después de ejecutar el tiro:\n  • si el balón entrara en la portería tras el lanzamiento, se volverá a ejecutar el tiro;\n  • si el lanzamiento no acabara en gol, se registrará como fallado.\n• El árbitro llevará el control de los lanzamientos.\n• Si el guardameta cometiera una infracción y, como resultado de ello, se tuviera que repetir el lanzamiento, se advertirá al guardameta por la primera infracción y se le amonestará en caso de reincidencia.\n• Si el lanzador es penalizado por una infracción cometida después de que el árbitro haya dado la señal para ejecutar el lanzamiento, se registrará este como fallado y se amonestará al lanzador.\n\nCada equipo ejecutará cinco lanzamientos ateniéndose a las condiciones detalladas a continuación\n• Los tiros deberán ejecutarse por turnos.\n• Cada uno de los lanzamientos deberá ejecutarlo un jugador diferente; antes de poder lanzar un segundo penal, todos los jugadores seleccionados deberán haber ejecutado ya un lanzamiento.\n• Si, antes de que ambos equipos hayan ejecutado sus cinco tiros, uno hubiera marcado más goles que los que el adversario pudiera anotar con sus cinco lanzamientos, se dará por terminada la tanda.\n• Si, después de ejecutar ambos equipos sus cinco lanzamientos, el marcador siguiera empatado, se proseguirá con los tiros penales hasta que un equipo haya marcado un gol más que el otro tras ejecutar el mismo número de lanzamientos.\n• La regla anterior será aplicable a la secuencia posterior de tiros, si bien los equipos podrán cambiar el orden de los lanzadores.\n• La tanda no deberá retrasarse porque un jugador abandone el terreno de juego. Si dicho jugador no regresara a tiempo para ejecutar el lanzamiento, este se registrará como no marcado.\n\nSustituciones y expulsiones durante la tanda de penales\n\n• Se podrá amonestar o expulsar a jugadores, suplentes, jugadores sustituidos o miembros del cuerpo técnico.\n• Si se expulsara a un guardameta, este deberá ser sustituido por un jugador autorizado para participar en la tanda.\n• A excepción del guardameta, no se podrá sustituir a ningún jugador que no esté en condiciones de continuar jugando.\n• El árbitro no suspenderá definitivamente el partido aunque un equipo se quedara con menos de siete jugadores.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["tanda-penales", "penales", "lanzamientos", "guardameta", "suplente"],
+      "order": 3
+    }
+  ],
+  "decisions": [],
+  "imageUrls": [],
+  "imageNote": "Diagrama de la portería con marcas para penales en el PDF IFAB 2026/27 p. 112. Por reproducir con atribución, no se incluye como binario."
+}

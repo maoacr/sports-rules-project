@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-/// Route path constants.
+/// Route path constants (v2: chapters/rules → laws/articles).
 class RoutePaths {
   RoutePaths._();
 
@@ -10,8 +10,9 @@ class RoutePaths {
   static const String auth = '/auth';
   static const String home = '/home';
   static const String sports = '/sports/:sportId';
-  static const String chapter = '/sports/:sportId/chapters/:chapterId';
-  static const String rule = '/sports/:sportId/chapters/:chapterId/rules/:ruleId';
+  static const String law = '/sports/:sportId/laws/:lawId';
+  static const String article =
+      '/sports/:sportId/laws/:lawId/articles/:articleId';
   static const String profile = '/profile';
   static const String settings = '/settings';
 }
@@ -25,8 +26,8 @@ class RouteNames {
   static const String auth = 'auth';
   static const String home = 'home';
   static const String sports = 'sports';
-  static const String chapter = 'chapter';
-  static const String rule = 'rule';
+  static const String law = 'law';
+  static const String article = 'article';
   static const String profile = 'profile';
   static const String settings = 'settings';
 }
@@ -57,17 +58,18 @@ sealed class DeepLinkRoute {
   const DeepLinkRoute(this.path);
 }
 
-class DeepLinkRule extends DeepLinkRoute {
-  final String ruleId;
+class DeepLinkArticle extends DeepLinkRoute {
+  final String articleId;
   final String? sportId;
-  final String? chapterId;
-  const DeepLinkRule(super.path, {required this.ruleId, this.sportId, this.chapterId});
+  final String? lawId;
+  const DeepLinkArticle(super.path,
+      {required this.articleId, this.sportId, this.lawId});
 }
 
-class DeepLinkChapter extends DeepLinkRoute {
-  final String chapterId;
+class DeepLinkLaw extends DeepLinkRoute {
+  final String lawId;
   final String sportId;
-  const DeepLinkChapter(super.path, {required this.chapterId, required this.sportId});
+  const DeepLinkLaw(super.path, {required this.lawId, required this.sportId});
 }
 
 class DeepLinkSport extends DeepLinkRoute {
@@ -110,21 +112,21 @@ class DeepLinkHandler {
     }
 
     switch (segments[0]) {
-      case 'rule':
+      case 'article':
         if (segments.length >= 2) {
-          return DeepLinkRule(
-            '/rule/${segments[1]}',
-            ruleId: segments[1],
+          return DeepLinkArticle(
+            '/article/${segments[1]}',
+            articleId: segments[1],
           );
         }
         break;
-      case 'chapter':
+      case 'law':
         if (segments.length >= 2) {
-          final chapterId = segments[1];
+          final lawId = segments[1];
           final sportId = uri.queryParameters['sport'] ?? 'default';
-          return DeepLinkChapter(
-            '/chapter/$chapterId',
-            chapterId: chapterId,
+          return DeepLinkLaw(
+            '/law/$lawId',
+            lawId: lawId,
             sportId: sportId,
           );
         }
@@ -142,20 +144,21 @@ class DeepLinkHandler {
     return const DeepLinkHome('/');
   }
 
-  /// Builds a deep link URL for a rule.
-  static String buildRuleUrl(String ruleId, {String? sportId, String? chapterId}) {
-    if (sportId != null && chapterId != null) {
-      return 'https://$_domain/rule/$ruleId?sport=$sportId&chapter=$chapterId';
+  /// Builds a deep link URL for an article.
+  static String buildArticleUrl(String articleId,
+      {String? sportId, String? lawId}) {
+    if (sportId != null && lawId != null) {
+      return 'https://$_domain/article/$articleId?sport=$sportId&law=$lawId';
     }
-    return 'https://$_domain/rule/$ruleId';
+    return 'https://$_domain/article/$articleId';
   }
 
-  /// Builds a deep link URL for a chapter.
-  static String buildChapterUrl(String chapterId, {String? sportId}) {
+  /// Builds a deep link URL for a law.
+  static String buildLawUrl(String lawId, {String? sportId}) {
     if (sportId != null) {
-      return 'https://$_domain/chapter/$chapterId?sport=$sportId';
+      return 'https://$_domain/law/$lawId?sport=$sportId';
     }
-    return 'https://$_domain/chapter/$chapterId';
+    return 'https://$_domain/law/$lawId';
   }
 
   /// Builds a deep link URL for a sport.
@@ -168,24 +171,24 @@ class DeepLinkHandler {
     if (result is DeepLinkSuccess) {
       final route = result.route;
 
-      if (route is DeepLinkRule) {
-        // Rule deep links need sportId and chapterId from query params
+      if (route is DeepLinkArticle) {
         final sportId = result.uri.queryParameters['sport'];
-        final chapterId = result.uri.queryParameters['chapter'];
-        if (sportId != null && chapterId != null) {
-          context.push('/sports/$sportId/chapters/$chapterId/rules/${route.ruleId}');
+        final lawId = result.uri.queryParameters['law'];
+        if (sportId != null && lawId != null) {
+          context.push(
+            '/sports/$sportId/laws/$lawId/articles/${route.articleId}',
+          );
         } else {
           context.go('/home');
         }
       } else if (route is DeepLinkSport) {
         context.push('/sports/${route.sportId}');
-      } else if (route is DeepLinkChapter) {
-        context.push('/sports/${route.sportId}/chapters/${route.chapterId}');
+      } else if (route is DeepLinkLaw) {
+        context.push('/sports/${route.sportId}/laws/${route.lawId}');
       } else {
         context.go('/home');
       }
     } else if (result is DeepLinkParseFailure) {
-      // Fallback to home on parse failure
       context.go('/home');
     }
   }

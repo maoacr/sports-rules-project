@@ -1,0 +1,88 @@
+{
+  "id": "law-04",
+  "sportId": "football",
+  "title": "The Players' Equipment",
+  "shortName": "Equipment",
+  "number": 4,
+  "isFree": false,
+  "sportTitle": "Fútbol",
+  "summary": "Equipamiento obligatorio, colores, otros elementos permitidos y prohibidos, eslóganes e infracciones.",
+  "sourceAttribution": "Texto oficial de IFAB, Laws of the Game 2026/27 (español). https://www.theifab.com/es/",
+  "articles": [
+    {
+      "id": "law-04/art-01",
+      "lawId": "law-04",
+      "sportId": "football",
+      "number": "1",
+      "title": "Seguridad",
+      "content": "Los jugadores no deberán llevar equipamiento ni objetos peligrosos.\n\nSe permite llevar accesorios siempre y cuando no sean peligrosos y estén cubiertos de forma segura. Los jugadores tendrán la obligación de quitarse las prendas u objetos peligrosos: no bastará con cubrirlos con cinta adhesiva ni otros métodos.\n\nSe deberá inspeccionar a los jugadores antes del inicio del partido y a los suplentes antes de que entren en el terreno de juego. Si un jugador llevara equipamiento o accesorios prohibidos o peligrosos, el árbitro deberá ordenar al jugador:\n\n• que se quite el objeto o prenda en cuestión;\n• que salga del terreno de juego en la próxima detención del juego si no puede o no quiere acatar la orden.\n\nDeberá amonestarse a todo jugador que rehúse acatar esta regla o que vuelva a ponerse el objeto o prenda.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["seguridad", "equipamiento", "objetos-peligrosos", "accesorios"],
+      "order": 1
+    },
+    {
+      "id": "law-04/art-02",
+      "lawId": "law-04",
+      "sportId": "football",
+      "number": "2",
+      "title": "Equipamiento obligatorio",
+      "content": "El equipamiento obligatorio de un jugador se compone de las siguientes prendas:\n\n• camiseta con mangas;\n• pantalones cortos;\n• medias: si se coloca cinta adhesiva o cualquier otro material en la parte exterior, deberá ser del mismo color que la parte de las medias sobre la que se use o que cubra;\n• espinilleras: deberán estar fabricadas de un material adecuado y tener un tamaño apropiado que proteja de manera razonable; quedarán cubiertas por las medias. Los jugadores serán responsables del tamaño y la adecuación de las espinilleras;\n• calzado de fútbol.\n\nEl capitán del equipo llevará el brazalete que decrete o autorice el organizador de competiciones pertinente, o bien un brazalete de un solo color que también puede incorporar la palabra «capitán», o bien la letra «C» o una traducción a otro idioma, que también será de un único color (véase también «Adaptación de las Reglas»).\n\nAquel jugador que pierda accidentalmente una bota o una espinillera deberá volver a colocársela lo más pronto posible, no más tarde de que el balón vuelva a dejar de estar en juego. Si antes de volver a calzarse o de colocarse de nuevo la espinillera el jugador jugara el balón o marcara un gol, el gol será válido.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["equipamiento", "camiseta", "pantalones", "medias", "espinilleras", "calzado", "brazalete", "capitan"],
+      "order": 2
+    },
+    {
+      "id": "law-04/art-03",
+      "lawId": "law-04",
+      "sportId": "football",
+      "number": "3",
+      "title": "Colores",
+      "content": "• Los dos equipos vestirán colores que los diferencien entre sí y del equipo arbitral.\n• Los guardametas vestirán colores que los diferencien de los demás jugadores y del equipo arbitral.\n• Si las camisetas de los dos guardametas fueran del mismo color y ninguno de ellos dispusiera de una de repuesto de otro color, el árbitro autorizará que se juegue el partido.\n\nLas camisetas interiores:\n\n• podrán ser de un único color, el mismo que el color principal de las mangas de la camiseta\n\no bien\n\n• podrán ser estampadas o de varios colores siempre y cuando repliquen de manera exacta las mangas de la camiseta.\n\nSi se usan mallas térmicas, estas deberán ser del color principal de los pantalones cortos o de su parte inferior; además, los jugadores del mismo equipo deberán llevarlas del mismo color.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["colores", "camiseta", "guardameta", "mallas-termicas"],
+      "order": 3
+    },
+    {
+      "id": "law-04/art-04",
+      "lawId": "law-04",
+      "sportId": "football",
+      "number": "4",
+      "title": "Otro tipo de equipamiento",
+      "content": "Se permite equipamiento protector no peligroso, como por ejemplo guantes, protectores de cabeza, máscaras faciales, rodilleras y coderas, fabricado con materiales blandos, ligeros y acolchados. También están permitidas las gorras para guardametas y las gafas de protección. Los guardametas podrán utilizar pantalones largos.\n\nProtectores de cabeza\nCuando se usen protectores de cabeza (excepto gorras para guardametas) estos deberán:\n\n• ser de color negro o del color principal de la camiseta (siempre y cuando los jugadores de un mismo equipo usen el mismo color);\n• estar en consonancia con el aspecto profesional del equipamiento del jugador;\n• no estar unidos o sujetos a la camiseta;\n• no suponer ningún riesgo para el jugador que lo lleve ni para ningún otro jugador (p. ej. un cierre alrededor del cuello);\n• carecer de partes que sobresalgan (protuberancias).\n\nComunicación electrónica\nLos jugadores (lo que incluye a suplentes, jugadores sustituidos y jugadores expulsados) no están autorizados para llevar o utilizar ningún tipo de equipos electrónicos o de comunicación, excepto en el caso que se permita el uso de EPTS. Se permite el uso de todo tipo de sistemas electrónicos de comunicación por parte del cuerpo técnico, en lo que respecta exclusivamente al bienestar y la seguridad del jugador o por razones tácticas o de instrucción, pero solo se pueden usar equipos pequeños y portátiles (p. ej. micrófonos, auriculares, teléfonos móviles/inteligentes, relojes inteligentes, tabletas u ordenadores portátiles). Serán expulsados aquellos miembros del cuerpo técnico que usen equipos no autorizados o que se comporten de manera inapropiada como producto del uso de equipos electrónicos o de comunicación.\n\nSistemas electrónicos de seguimiento del rendimiento (EPTS)\nCuando se usen dispositivos como parte de sistemas electrónicos de seguimiento del rendimiento de jugadores en una competición oficial auspiciada por la FIFA, una confederación o una federación nacional, el organizador de la competición deberá garantizar que los dispositivos que van adheridos al equipamiento de los jugadores no sean peligrosos. Además, deberán cumplir con los criterios para dispositivos de seguimiento electrónico del rendimiento del Programa de calidad de la FIFA de EPTS.\n\nCuando los EPTS los faciliten los organizadores del partido o la competición, será responsabilidad de estos garantizar que la información y los datos transmitidos por el EPTS al área técnica durante los partidos de una competición oficial son fiables y precisos.\n\nEl Programa de calidad de la FIFA para EPTS asiste a los organizadores de competiciones a la hora de aprobar dispositivos electrónicos de seguimiento del rendimiento precisos y fiables.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["equipamiento", "protectores", "epts", "comunicacion-electronica"],
+      "order": 4
+    },
+    {
+      "id": "law-04/art-05",
+      "lawId": "law-04",
+      "sportId": "football",
+      "number": "5",
+      "title": "Eslóganes, mensajes, imágenes y publicidad",
+      "content": "El equipamiento no deberá contener eslóganes, mensajes o imágenes de carácter político, religioso o personal. Los jugadores no deberán mostrar ropa interior con eslóganes, mensajes o imágenes de carácter político, religioso, personal o publicitario que no sea el logotipo del fabricante. En caso de infracción, el jugador o el equipo serán sancionados por el organizador de la competición, la federación nacional de fútbol o la FIFA.\n\nPrincipios\n\n• La Regla 4 se aplica a todo tipo de equipamiento (incluidas las prendas de ropa) que lleven jugadores, suplentes y jugadores sustituidos; sus principios serán también aplicables a todos los miembros del cuerpo técnico ubicados en el área técnica.\n• (Generalmente) se permite lo siguiente:\n  • el número del jugador, el nombre, el escudo del equipo, eslóganes de alguna iniciativa, logotipos que promuevan el fútbol, el respeto y la integridad, así como todo tipo de publicidad autorizada en el reglamento de la competición o por el reglamento de la federación nacional, la confederación o la FIFA;\n  • los datos de un partido: equipo, fecha, competición, estadio, ciudad.\n\n• Los eslóganes autorizados, los mensajes y las imágenes deberán aparecer únicamente en el frontal de la camiseta o en el brazalete.\n• En algunos casos, los eslóganes, los mensajes o las imágenes aparecerán únicamente en el brazalete del capitán.\n\nInterpretación de la Regla\nA la hora de decidir si un eslogan, un mensaje o una imagen son permisibles, se deberá considerar lo estipulado en la Regla 12 (Faltas y conducta incorrecta), que obliga al árbitro a actuar en el caso de que un jugador sea responsable de:\n• emplear lenguaje o actuar de modo ofensivo, insultante o humillante;\n• actuar de forma provocadora o exaltada.\n\nNo estarán autorizados todos aquellos eslóganes, mensajes e imágenes que se incluyan en estas categorías.\n\nSi bien las categorías «religioso» y «personal» son fáciles de definir, la categoría «política» no lo es tanto; no obstante, no se permitirán los siguientes eslóganes, mensajes e imágenes:\n\n• de personas, vivas o ya fallecidas, a menos que formen parte del nombre de la competición;\n• de partidos, organizaciones, grupos, etc. de carácter político, ya sean locales, regionales, nacionales o internacionales;\n• de gobiernos locales, regionales o nacionales ni de sus ministerios, cargos o funciones;\n• de ninguna organización de carácter discriminatorio;\n• de ninguna organización cuyos objetivos o acciones puedan ofender a un número considerable de personas;\n• de ningún acto o acontecimiento de carácter político.\n\nCuando se conmemore un acto relevante nacional o internacional, se deberán tener en consideración las sensibilidades del equipo adversario, de sus seguidores y del público en general.\n\nLas reglas de la competición podrán estipular otro tipo de restricciones o limitaciones relativas al tamaño, número y posición de los eslóganes, mensajes e imágenes permitidos. Se recomienda dirimir las posibles disputas sobre eslóganes, mensajes o imágenes antes del comienzo del partido o la competición.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["esloganes", "mensajes", "publicidad", "politica", "religion"],
+      "order": 5
+    },
+    {
+      "id": "law-04/art-06",
+      "lawId": "law-04",
+      "sportId": "football",
+      "number": "6",
+      "title": "Infracciones y sanciones",
+      "content": "En caso de infracción de esta regla, no es necesario detener el juego y, además:\n• el árbitro ordenará al jugador infractor que abandone el terreno de juego para que corrija su equipamiento;\n• el jugador saldrá del terreno de juego cuando se detenga el juego, a menos que ya haya corregido su equipamiento.\n\nLos jugadores que abandonen el terreno de juego para corregir o cambiar su equipamiento deberán:\n\n• someter el equipamiento al control de un miembro del equipo arbitral antes de poder volver a entrar;\n• volver a entrar únicamente con el permiso del árbitro (el cual puede concederse durante el juego).\n\nSe amonestará a aquellos jugadores que vuelvan a entrar al terreno de juego sin el permiso expreso del árbitro; si se tuviera que detener el juego para amonestar al jugador, se concederá un libre indirecto en el lugar donde se encontraba el balón cuando se detuvo el juego, a menos que se hubiera producido una interferencia, en cuyo caso se concederá un libre directo (o un tiro penal) desde el lugar en el que se produjo dicha interferencia.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["infracciones", "equipamiento", "amonestacion"],
+      "order": 6
+    }
+  ],
+  "decisions": [],
+  "imageUrls": [],
+  "imageNote": "Sin diagramas en esta ley."
+}

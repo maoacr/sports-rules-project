@@ -1,0 +1,40 @@
+{
+  "id": "law-16",
+  "sportId": "football",
+  "title": "The Goal Kick",
+  "shortName": "Goal kick",
+  "number": 16,
+  "isFree": false,
+  "sportTitle": "Fútbol",
+  "summary": "Procedimiento del saque de meta desde el área de meta y sanciones por infracción.",
+  "sourceAttribution": "Texto oficial de IFAB, Laws of the Game 2026/27 (español). https://www.theifab.com/es/",
+  "articles": [
+    {
+      "id": "law-16/art-01",
+      "lawId": "law-16",
+      "sportId": "football",
+      "number": "1",
+      "title": "Procedimiento",
+      "content": "• El balón deberá estar inmóvil y un jugador del equipo defensor lo golpeará desde cualquier punto del área de meta.\n• El balón estará en juego en el momento en que haya sido golpeado con el pie y esté claramente en movimiento.\n• Los adversarios deberán permanecer fuera del área penal hasta que el balón esté en juego.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["saque-de-meta", "procedimiento", "area-de-meta", "balon-inmovil"],
+      "order": 1
+    },
+    {
+      "id": "law-16/art-02",
+      "lawId": "law-16",
+      "sportId": "football",
+      "number": "2",
+      "title": "Infracciones y sanciones",
+      "content": "Si un jugador retrasa injustamente la ejecución de un saque de meta de su equipo, el árbitro hará sonar el silbato y señalará el comienzo de la cuenta atrás de cinco segundos. El árbitro efectuará la señal de la cuenta atrás de cinco segundos con la mano levantada y, si el saque de meta no se ha efectuado antes del final de los cinco segundos, se concederá un saque de esquina al equipo adversario. Se amonestará al infractor solo si retrasa excesivamente la reanudación después de que se haya concedido el saque de esquina al equipo adversario*.\n\nSi, una vez que el balón esté en juego, el jugador que ejecutó el saque volviera a tocarlo antes de que lo toque otro jugador, se concederá un libre indirecto; en caso de que cometa una infracción por mano:\n• se concederá un libre directo;\n• se concederá un tiro penal si la infracción se cometió dentro de su área penal, a menos que fuera el guardameta del equipo defensor, en cuyo caso se concederá un tiro libre indirecto.\n\nSi en el momento de ejecutar el saque de meta quedara algún jugador del equipo adversario en el área penal que no haya tenido tiempo a salir de ella, el árbitro permitirá que el juego prosiga. Si un adversario se encontrara dentro del área penal en el momento de ejecutar el saque de meta, entrara en ella antes de que el balón esté en juego, o tocara o disputara el balón antes de que este esté en juego, se repetirá el saque de meta.\n\nSi un jugador entrara en el área penal antes de que el balón esté en juego y cometiera una infracción contra un adversario o fuera objeto de una infracción por parte de él, deberá repetirse el saque de meta y el infractor podrá ser amonestado o expulsado, según la gravedad de la infracción.\n\nSi se cometiera cualquier otra infracción de esta regla, se repetirá el saque.\n\n*Véase el «Protocolo de la cuenta atrás para el saque de banda y el saque de meta» en la sección «Observaciones y adaptaciones».",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["saque-de-meta", "infraccion", "cuenta-atras", "5-segundos", "saque-de-esquina", "amonestacion"],
+      "order": 2
+    }
+  ],
+  "decisions": [],
+  "imageUrls": [],
+  "imageNote": "Sin diagramas en esta ley."
+}

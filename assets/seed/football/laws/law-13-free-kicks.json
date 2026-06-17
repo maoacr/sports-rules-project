@@ -1,0 +1,52 @@
+{
+  "id": "law-13",
+  "sportId": "football",
+  "title": "Free Kicks",
+  "shortName": "Free kicks",
+  "number": 13,
+  "isFree": false,
+  "sportTitle": "Fútbol",
+  "summary": "Tipos de tiros libres, procedimiento (distancias, barrera, ejecución) e infracciones.",
+  "sourceAttribution": "Texto oficial de IFAB, Laws of the Game 2026/27 (español). https://www.theifab.com/es/",
+  "articles": [
+    {
+      "id": "law-13/art-01",
+      "lawId": "law-13",
+      "sportId": "football",
+      "number": "1",
+      "title": "Tipos de tiros libres",
+      "content": "Se concederá un libre directo o indirecto al equipo adversario de un jugador, suplente, jugador sustituido o expulsado o miembro del cuerpo técnico responsable de una infracción.\n\nSeñal de tiro libre indirecto\nEl árbitro indicará un tiro libre indirecto levantando un brazo por encima de la cabeza; esta señal se mantendrá hasta que se ejecute el tiro y el balón toque a otro jugador, deje de estar en juego o esté claro que no es posible marcar un gol directamente.\n\nSi el árbitro se olvidara de indicar que el tiro es indirecto y, tras el lanzamiento, el balón entrara directamente en la portería, se deberá repetir el tiro.\n\nEl balón entra en la portería\n\n• Si un libre directo entra directamente en la portería contraria, se concederá gol.\n• Si un libre indirecto entra directamente en la portería contraria, se concederá saque de meta.\n• Si un libre directo o indirecto entra directamente en la propia portería, se concederá saque de esquina al equipo adversario.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["libre-directo", "libre-indirecto", "tiro-libre", "senal", "porteria"],
+      "order": 1
+    },
+    {
+      "id": "law-13/art-02",
+      "lawId": "law-13",
+      "sportId": "football",
+      "number": "2",
+      "title": "Procedimiento",
+      "content": "Todos los tiros libres se ejecutarán desde el lugar donde se produzca la infracción, excepto en los siguientes casos:\n\n• los libres indirectos concedidos a favor del equipo atacante por una infracción dentro del área de meta del adversario se ejecutarán desde el punto más próximo de la línea del área de meta paralela a la línea de meta;\n• los tiros libres a favor del equipo defensor en su área de meta podrán ejecutarse desde cualquier punto del área de meta;\n• los tiros libres por infracciones relacionadas con la entrada, el reingreso o la salida del terreno de juego de un jugador sin permiso se ejecutarán desde el lugar donde se encontrase el balón cuando se detuviese el juego. Sin embargo, cuando un jugador cometa una infracción fuera del terreno de juego, el juego se reanudará con un tiro libre ejecutado en la línea de demarcación más cercana a donde se produjese la infracción; en el caso de infracciones sancionables con libre directo dentro del área penal del infractor, se señalará penal;\n• aquellos casos en los que las Reglas de Juego indiquen otra posición (v. Reglas 3, 11 y 12).\n\nEl balón:\n\n• deberá estar inmóvil y el ejecutor no deberá tocar el balón por segunda vez hasta que lo haya tocado otro jugador;\n• estará en juego una vez haya sido golpeado con el pie y se mueva con claridad.\n\nHasta que el balón esté en juego, todos los adversarios deberán permanecer:\n\n• como mínimo a 9.15 m (10 yd) del balón, salvo si se hallan sobre la línea de meta entre los postes de su propia portería;\n• fuera del área penal en el caso de tiros libres dentro del área penal del adversario.\n\nCuando tres o más jugadores del equipo defensor formen una «barrera», los jugadores del equipo atacante deberán guardar al menos 1 m (1 yd) de distancia con respecto a la «barrera» hasta que el balón esté en juego.\n\nSe podrá ejecutar un tiro libre elevando el balón con un solo pie o con los dos simultáneamente.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["procedimiento", "distancia", "barrera", "area-de-meta", "9-15m"],
+      "order": 2
+    },
+    {
+      "id": "law-13/art-03",
+      "lawId": "law-13",
+      "sportId": "football",
+      "number": "3",
+      "title": "Infracciones y sanciones",
+      "content": "Si, al ejecutar un tiro libre, un adversario no respetara la distancia reglamentaria del balón, se volverá a ejecutar el tiro a menos que se pueda conceder ventaja; no obstante, si un jugador ejecutara un tiro libre rápido y un adversario que se halla a menos de 9.15 m (10 yd) interceptara el balón, el árbitro permitirá que el juego continúe. No obstante, aquel adversario que obstaculice deliberadamente el saque de un tiro libre rápido deberá ser amonestado por retrasar la reanudación del juego.\n\nSi, una vez que el balón esté en juego, el ejecutor del tiro libre volviera a tocar el balón antes de que lo toque otro jugador, se concederá libre indirecto, o en caso de que el ejecutor cometa una infracción por mano:\n• se concederá un libre directo;\n• se concederá tiro penal si la infracción ocurrió dentro de su área penal, a menos que fuera el guardameta, en cuyo caso se concederá un libre indirecto.\n\nFintar durante la ejecución de un tiro libre para confundir a los adversarios forma parte del juego y está permitido.\n\nSi durante la ejecución correcta de un tiro libre el ejecutor golpeara voluntariamente el balón contra un adversario con la intención de jugarlo de nuevo, pero no lo hiciera de manera imprudente ni temeraria, ni empleando una fuerza excesiva, el árbitro permitirá que el juego continúe.\n\nSi, durante la ejecución de un tiro libre, algún jugador del equipo atacante estuviera situado a menos de 1 m (1 yd) de la «barrera» formada por tres o más jugadores del equipo defensor, se concederá un libre indirecto.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["infraccion", "distancia-reglamentaria", "barrera", "1-metro", "amonestacion"],
+      "order": 3
+    }
+  ],
+  "decisions": [],
+  "imageUrls": [],
+  "imageNote": "Sin diagramas en esta ley."
+}

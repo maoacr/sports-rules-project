@@ -79,7 +79,7 @@ class SportCard extends StatelessWidget {
                         ),
                         const SizedBox(width: 4),
                         Text(
-                          '${sport.chapterCount} chapters',
+                          '${sport.lawCount} laws',
                           style: AppTypography.caption,
                         ),
                         const SizedBox(width: 12),

@@ -1,0 +1,52 @@
+{
+  "id": "law-02",
+  "sportId": "football",
+  "title": "The Ball",
+  "shortName": "Ball",
+  "number": 2,
+  "isFree": false,
+  "sportTitle": "Fútbol",
+  "summary": "Características y medidas del balón oficial, sustitución de balón defectuoso, balones adicionales.",
+  "sourceAttribution": "Texto oficial de IFAB, Laws of the Game 2026/27 (español). https://www.theifab.com/es/",
+  "articles": [
+    {
+      "id": "law-02/art-01",
+      "lawId": "law-02",
+      "sportId": "football",
+      "number": "1",
+      "title": "Características y medidas",
+      "content": "Los balones deberán:\n\n• ser esféricos;\n• estar fabricados con materiales adecuados;\n• tener una circunferencia comprendida entre 68 y 70 cm (27-28 in);\n• tener un peso comprendido entre 410 y 450 g (14-16 oz) al comienzo del partido;\n• tener una presión equivalente a 0.6–1.1 atmósferas (600–1100 g/cm2) al nivel del mar.\n\nTodos los balones utilizados en partidos de competición oficial organizados bajo los auspicios de la FIFA o de las confederaciones deberán cumplir con los criterios del Programa de calidad de la FIFA de balones de fútbol y portar uno de los sellos de calidad del mismo.\n\nEstos distintivos indican que el balón ha sido examinado oficialmente y cumple los requisitos técnicos para dicho distintivo, además de las especificaciones mínimas estipuladas en la Regla 2 y aprobadas por el IFAB.\n\nEn las competiciones de las federaciones nacionales de fútbol, se podrá exigir el uso de balones que lleven uno de estos distintivos.\n\nEn los partidos que se jueguen en una competición oficial bajo los auspicios de la FIFA, de las confederaciones o de las federaciones nacionales de fútbol, está prohibida toda clase de publicidad comercial en el balón, con excepción del logotipo o emblema de la competición o del organizador de la competición y la marca registrada autorizada del fabricante. El reglamento de la competición podrá restringir el tamaño y el número de dichas marcas.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["balon", "esferico", "medidas", "peso", "presion", "calidad", "publicidad"],
+      "order": 1
+    },
+    {
+      "id": "law-02/art-02",
+      "lawId": "law-02",
+      "sportId": "football",
+      "number": "2",
+      "title": "Sustitución de un balón defectuoso",
+      "content": "Si el balón perdiera sus propiedades y no pudiera seguir utilizándose:\n\n• se detendrá el juego;\n• se reanudará el juego con un balón a tierra.\n\nSi el balón quedara defectuoso en un saque de inicio, de meta, de esquina o de banda, o en el lanzamiento de un tiro libre o penal, se volverá a ejecutar el saque o el lanzamiento.\n\nSi el balón, mientras se mueve hacia adelante, quedara defectuoso antes de llegar a tocar a un jugador, el travesaño o los postes durante la ejecución de un penal o de la tanda de penales, se volverá a ejecutar dicho lanzamiento.\n\nEl balón no podrá ser reemplazado durante el transcurso del partido sin la autorización del árbitro.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["balon", "defectuoso", "sustitucion"],
+      "order": 2
+    },
+    {
+      "id": "law-02/art-03",
+      "lawId": "law-02",
+      "sportId": "football",
+      "number": "3",
+      "title": "Balones adicionales",
+      "content": "Se podrán colocar balones adicionales alrededor del terreno de juego, siempre que cumplan las especificaciones estipuladas en la Regla 2 y su uso lo supervise el árbitro.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["balon", "adicional", "reserva"],
+      "order": 3
+    }
+  ],
+  "decisions": [],
+  "imageUrls": [],
+  "imageNote": "Sin diagramas en esta ley."
+}
