@@ -27,7 +27,7 @@ void main() {
     title: 'Football',
     description: 'Official FIFA football rules',
     thumbnailUrl: 'https://example.com/football.png',
-    chapterCount: 17,
+    lawCount: 17,
     price: 499,
     isPublished: true,
   );

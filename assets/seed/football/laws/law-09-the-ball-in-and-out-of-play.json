@@ -1,0 +1,40 @@
+{
+  "id": "law-09",
+  "sportId": "football",
+  "title": "The Ball in and out of Play",
+  "shortName": "Ball in play",
+  "number": 9,
+  "isFree": false,
+  "sportTitle": "Fútbol",
+  "summary": "Cuándo el balón está en juego y cuándo no, incluyendo el caso de contacto con el equipo arbitral.",
+  "sourceAttribution": "Texto oficial de IFAB, Laws of the Game 2026/27 (español). https://www.theifab.com/es/",
+  "articles": [
+    {
+      "id": "law-09/art-01",
+      "lawId": "law-09",
+      "sportId": "football",
+      "number": "1",
+      "title": "Balón no en juego",
+      "content": "El balón no estará en juego cuando:\n\n• haya atravesado completamente la línea de meta o de banda, ya sea por el suelo o por el aire;\n• el juego haya sido detenido por el árbitro;\n• el balón toque a un miembro del equipo arbitral, permanezca en el terreno de juego y, además:\n  • un equipo inicie un ataque prometedor o\n  • el balón entre directamente en la portería o\n  • el equipo en posesión del balón cambie.\n\nEn todos los casos anteriores, el juego se reanudará con un balón a tierra.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["balon-en-juego", "balon-a-tierra", "ataque-prometedor", "posesion"],
+      "order": 1
+    },
+    {
+      "id": "law-09/art-02",
+      "lawId": "law-09",
+      "sportId": "football",
+      "number": "2",
+      "title": "Balón en juego",
+      "content": "El balón estará en juego en el resto de situaciones en las que entre en contacto con un miembro del equipo arbitral y cuando rebote en un poste o un travesaño o en el banderín de esquina y permanezca en el terreno de juego.\n\nSi, sin intención de interferir de forma antirreglamentaria, un miembro del cuerpo técnico, suplente, jugador sustituido o expulsado o jugador temporalmente fuera del terreno de juego (por lesión, para ajustarse el equipamiento, etc.) toca un balón que está claramente a punto de salir del campo, la acción se sancionará con un tiro libre indirecto. No habrá sanción disciplinaria.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["balon-en-juego", "rebote", "poste", "travesano", "banderin"],
+      "order": 2
+    }
+  ],
+  "decisions": [],
+  "imageUrls": [],
+  "imageNote": "Sin diagramas en esta ley."
+}

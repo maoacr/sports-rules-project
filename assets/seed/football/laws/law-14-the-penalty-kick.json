@@ -1,0 +1,52 @@
+{
+  "id": "law-14",
+  "sportId": "football",
+  "title": "The Penalty Kick",
+  "shortName": "Penalty",
+  "number": 14,
+  "isFree": false,
+  "sportTitle": "Fútbol",
+  "summary": "Procedimiento del tiro penal, infracciones y sanciones, tabla resumen.",
+  "sourceAttribution": "Texto oficial de IFAB, Laws of the Game 2026/27 (español). https://www.theifab.com/es/",
+  "articles": [
+    {
+      "id": "law-14/art-01",
+      "lawId": "law-14",
+      "sportId": "football",
+      "number": "1",
+      "title": "Procedimiento",
+      "content": "El balón deberá estar inmóvil y tocará en parte el centro del punto penal o sobresaldrá de él, y los postes, el travesaño y la red no podrán estar tampoco en movimiento.\n\nDeberá indicarse con claridad quién será el ejecutor del lanzamiento.\n\nEl guardameta deberá permanecer sobre su propia línea de meta, entre los dos postes de la portería y frente al ejecutor del tiro hasta el golpeo del balón.\n\nEl guardameta no se comportará de manera que distraiga de forma antirreglamentaria al ejecutor del tiro, p. ej. no retrasará la ejecución del penal ni tocará los postes, el travesaño o la red de la portería.\n\nTodos los jugadores, excepto el ejecutor del penal y el guardameta, deberán estar:\n• a un mínimo de 9.15 m (10 yd) del punto penal;\n• detrás del punto penal;\n• dentro de los límites del terreno de juego;\n• fuera del área penal.\n\nUna vez que los jugadores hayan ocupado su posición de conformidad con la presente regla, el árbitro dará la señal para que se ejecute el penal.\n\nEl ejecutor del penal tocará el balón con el pie hacia delante; se permite golpearlo con el tacón siempre que el balón se mueva hacia delante.\n\nEn el momento del golpeo, el guardameta deberá tener al menos parte de un pie en contacto directo con la línea de meta, sobre esta o por detrás de esta.\n\nEl balón estará en juego en el momento en que se golpee y se desplace con claridad.\n\nEl ejecutor del penal no podrá jugar el balón por segunda vez hasta que lo haya tocado otro jugador.\n\nLa ejecución del penal se completará cuando el balón deje de moverse, deje de estar en juego o el árbitro detenga el juego por alguna infracción de las reglas.\n\nCon el fin de ejecutar y completar un tiro penal, se podrá conceder tiempo adicional al final de cada uno de los periodos de juego reglamentarios o del tiempo suplementario. Cuando se conceda tiempo adicional, el penal se completará cuando, una vez ejecutado el tiro, el balón deje de moverse, deje de estar en juego, sea jugado por un jugador (incluido el lanzador) aparte del guardameta defensor, o el árbitro detenga el juego por una infracción del lanzador o de su equipo. Si un jugador del equipo defensor (incluido el guardameta) cometiera una infracción y se fallara o detuviera el penal, se deberá repetir el lanzamiento.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["penal", "procedimiento", "punto-penal", "guardameta", "9-15m"],
+      "order": 1
+    },
+    {
+      "id": "law-14/art-02",
+      "lawId": "law-14",
+      "sportId": "football",
+      "number": "2",
+      "title": "Infracciones y sanciones",
+      "content": "Una vez que el árbitro haya dado la señal para ejecutar un tiro penal, este deberá lanzarse inmediatamente; de no ser así, el árbitro podrá adoptar medidas disciplinarias antes de volver a dar la señal de ejecución del penal.\n\nSi antes de que el balón esté en juego se produce alguna de las siguientes situaciones, deberá procederse como se indica a continuación:\n• si el lanzador del penal golpea el balón de manera involuntaria con los dos pies simultáneamente o el balón le toca el pie o la pierna de apoyo justo después de ejecutar el tiro:\n  • si el balón entrara en la portería directamente tras el lanzamiento, se repetirá el penal;\n  • si el balón no entrara en la portería directamente tras el lanzamiento, se concederá un tiro libre indirecto;\n• se sancionará por adelantamiento a un compañero del jugador que ejecute el tiro penal únicamente si:\n  • el adelantamiento influye claramente en el guardameta; o\n  • el jugador adelantado juega el balón o lo disputa a un adversario y, a continuación, anota o intenta anotar un gol, o crea una ocasión de gol.\n• se sancionará por adelantamiento a un compañero del guardameta únicamente si:\n  • el adelantamiento influye claramente en el lanzador; o\n  • el jugador adelantado juega el balón o lo disputa a un adversario y esto impide que el equipo rival anote o intente anotar un gol, o cree una ocasión de gol;\n• el ejecutor del penal o un compañero de equipo infringe las Reglas de Juego:\n  • si el balón entrara en la portería tras el lanzamiento, se repetirá el penal;\n  • si el balón no entrara en la portería tras el lanzamiento, el árbitro detendrá el juego y lo reanudará con un libre indirecto;\ncomo excepción a lo anterior, en los siguientes casos, se detendrá el juego y se reanudará con un libre indirecto, independientemente de que se haya marcado gol o no:\n  • el penal se ejecuta hacia atrás;\n  • el penal es ejecutado por un jugador no designado para ello; el árbitro amonestará al lanzador del tiro penal;\n  • el ejecutor del penal finta al golpear el balón tras haber finalizado la carrera (sí se permite fintar durante la carrera); el árbitro amonestará al ejecutor.\n• el guardameta comete una infracción:\n  • si el balón entrara en la portería tras el lanzamiento, se concederá gol;\n  • si el balón no entrara en la portería o rebotara en el larguero o los postes, únicamente se repetirá el tiro penal si la infracción del guardameta influye claramente en el lanzador;\n  • si el guardameta evitara que el balón entrara en la portería, se repetirá el tiro penal;\nSi la infracción del guardameta conllevara la repetición del tiro penal, se advertirá al guardameta si se trata de la primera infracción del partido, y se le amonestará en caso de reincidencia.\n• un compañero de equipo del guardameta comete una infracción:\n  • si el balón entrara en la portería tras el lanzamiento, se concederá gol;\n  • si el balón no entrara en la portería tras el lanzamiento, se repetirá el tiro penal;\n• un jugador del equipo defensor y otro del equipo atacante cometen una infracción: se repetirá el penal, a menos que un jugador cometiera una infracción más grave (p. ej. una finta antirreglamentaria).\n\nTras el lanzamiento del penal:\n\n• si el ejecutor del penal volviera a tocar intencionadamente el balón antes de que lo toque otro jugador:\n  • se concederá un libre indirecto (o libre directo en caso de que el ejecutor cometa una infracción por mano);\n• si un agente externo tocara el balón cuando este se mueve hacia delante:\n  • se repetirá el tiro, a menos que el balón vaya a entrar en la portería y la interferencia no impida que el guardameta o un defensor juegue el balón, en cuyo caso se concederá gol si entra en la portería (incluso si se produjo contacto con el balón), a menos que el equipo atacante haya sido el responsable de la interferencia;\n• si el balón volviera al terreno de juego tras rebotar en el guardameta, el travesaño o los postes, y un agente externo lo tocara después:\n  • el árbitro detendrá el juego;\n  • el juego se reanudará con un balón a tierra en el lugar donde el agente externo hubiera tocado el balón.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["penal", "infraccion", "sancion", "adelantamiento", "guardameta", "lanzador"],
+      "order": 2
+    },
+    {
+      "id": "law-14/art-03",
+      "lawId": "law-14",
+      "sportId": "football",
+      "number": "3",
+      "title": "Resumen",
+      "content": "Tabla resumen de infracciones y sanciones en el tiro penal (gol marcado tras el lanzamiento / no es gol tras el lanzamiento):\n\n• Adelantamiento solo de los atacantes — Influye en la jugada: tiro libre indirecto / No influye en la jugada: no se repite el lanzamiento.\n• Adelantamiento solo de los defensores — Influye en la jugada: se repite el lanzamiento / No influye en la jugada: gol.\n• Adelentamiento de defensores y atacantes — Los defensores y atacantes influyen en la jugada: se repite el lanzamiento; Solo los defensores influyen en la jugada: gol; Solo los atacantes influyen en la jugada: se repite el lanzamiento; No influye en la jugada: gol.\n• Infracción solo del guardameta — Influye en la jugada: gol; No detenido: no se repite (a menos que influya en el ejecutor); Detenido: se repite y advertencia para el guardameta; amonestación si comete más infracciones.\n• Guardameta y ejecutor infringen al mismo tiempo — Se repite el lanzamiento a menos que el ejecutor cometa una de las infracciones estipuladas a continuación.\n• El ejecutor juega el balón por segunda vez — De manera involuntaria: se repite el lanzamiento; De manera voluntaria: tiro libre indirecto; De manera involuntaria: tiro libre indirecto; se repite el lanzamiento si el guardameta también comete una infracción; De manera voluntaria: tiro libre indirecto.\n• Balón golpeado hacia atrás — Libre indirecto.\n• Finta antirreglamentaria — Tiro libre indirecto y amonestación al ejecutor.\n• Ejecutor no designado — Tiro libre indirecto y amonestación al ejecutor.\n• Conducta antideportiva del ejecutor — Tiro libre indirecto y amonestación al ejecutor.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["resumen", "penal", "infracciones", "tabla"],
+      "order": 3
+    }
+  ],
+  "decisions": [],
+  "imageUrls": [],
+  "imageNote": "Tabla resumen en formato imagen en el PDF IFAB 2026/27 pp. 148-150. Por reproducir con atribución, no se incluye como binario."
+}

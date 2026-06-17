@@ -7,13 +7,15 @@ import 'features/sports/presentation/pages/splash_page.dart';
 import 'features/auth/presentation/pages/onboarding_page.dart';
 import 'features/auth/presentation/pages/auth_page.dart';
 import 'features/sports/presentation/pages/home_page.dart';
-import 'features/sports/presentation/pages/chapter_list_page.dart';
-import 'features/sports/presentation/pages/chapter_detail_page.dart';
-import 'features/sports/presentation/pages/rule_detail_page.dart';
+import 'features/sports/presentation/pages/law_list_page.dart';
+import 'features/sports/presentation/pages/law_detail_page.dart';
+import 'features/sports/presentation/pages/article_detail_page.dart';
 import 'features/profile/presentation/pages/profile_page.dart';
 import 'features/profile/presentation/pages/settings_page.dart';
+import 'features/rules/presentation/pages/bookmark_list_page.dart';
+import 'features/purchases/presentation/pages/purchases_page.dart';
 
-/// Route paths matching spec.
+/// Route paths matching spec (v2: chapters/rules → laws/articles).
 class AppRoutePaths {
   AppRoutePaths._();
 
@@ -22,10 +24,13 @@ class AppRoutePaths {
   static const String auth = '/auth';
   static const String home = '/home';
   static const String sports = '/sports/:sportId';
-  static const String chapter = '/sports/:sportId/chapters/:chapterId';
-  static const String rule = '/sports/:sportId/chapters/:chapterId/rules/:ruleId';
+  static const String law = '/sports/:sportId/laws/:lawId';
+  static const String article =
+      '/sports/:sportId/laws/:lawId/articles/:articleId';
   static const String profile = '/profile';
   static const String settings = '/settings';
+  static const String bookmarks = '/bookmarks';
+  static const String purchases = '/purchases';
 }
 
 /// Route names for GoRouter.
@@ -37,10 +42,12 @@ class AppRouteNames {
   static const String auth = 'auth';
   static const String home = 'home';
   static const String sports = 'sports';
-  static const String chapter = 'chapter';
-  static const String rule = 'rule';
+  static const String law = 'law';
+  static const String article = 'article';
   static const String profile = 'profile';
   static const String settings = 'settings';
+  static const String bookmarks = 'bookmarks';
+  static const String purchases = 'purchases';
 }
 
 /// Deep link route information parser using AppLinks.
@@ -147,29 +154,29 @@ GoRouter createAppRouter(AuthBloc authBloc) {
         name: AppRouteNames.sports,
         builder: (context, state) {
           final sportId = state.pathParameters['sportId']!;
-          return ChapterListPage(sportId: sportId);
+          return LawListPage(sportId: sportId);
         },
         routes: [
           GoRoute(
-            path: 'chapters/:chapterId',
-            name: AppRouteNames.chapter,
+            path: 'laws/:lawId',
+            name: AppRouteNames.law,
             builder: (context, state) {
               final sportId = state.pathParameters['sportId']!;
-              final chapterId = state.pathParameters['chapterId']!;
-              return ChapterDetailPage(sportId: sportId, chapterId: chapterId);
+              final lawId = state.pathParameters['lawId']!;
+              return LawDetailPage(sportId: sportId, lawId: lawId);
             },
             routes: [
               GoRoute(
-                path: 'rules/:ruleId',
-                name: AppRouteNames.rule,
+                path: 'articles/:articleId',
+                name: AppRouteNames.article,
                 builder: (context, state) {
-                  final ruleId = state.pathParameters['ruleId']!;
+                  final articleId = state.pathParameters['articleId']!;
                   final sportId = state.pathParameters['sportId']!;
-                  final chapterId = state.pathParameters['chapterId']!;
-                  return RuleDetailPage(
-                    ruleId: ruleId,
+                  final lawId = state.pathParameters['lawId']!;
+                  return ArticleDetailPage(
+                    articleId: articleId,
                     sportId: sportId,
-                    chapterId: chapterId,
+                    lawId: lawId,
                   );
                 },
               ),
@@ -186,6 +193,16 @@ GoRouter createAppRouter(AuthBloc authBloc) {
         path: '/settings',
         name: AppRouteNames.settings,
         builder: (context, state) => const SettingsPage(),
+      ),
+      GoRoute(
+        path: '/bookmarks',
+        name: AppRouteNames.bookmarks,
+        builder: (context, state) => const BookmarkListPage(),
+      ),
+      GoRoute(
+        path: '/purchases',
+        name: AppRouteNames.purchases,
+        builder: (context, state) => const PurchasesPage(),
       ),
     ],
     redirect: (context, state) {

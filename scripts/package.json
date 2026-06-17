@@ -1,0 +1,14 @@
+{
+  "name": "sports-rules-seed",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "One-shot Firestore seeder for sports-rules-app",
+  "scripts": {
+    "seed": "node import_seed.mjs",
+    "seed:dry": "node import_seed.mjs --dry-run"
+  },
+  "dependencies": {
+    "firebase-admin": "^12.0.0"
+  }
+}

@@ -40,8 +40,8 @@ test/.test_coverage.dart
 # compiles out of the box without requiring every developer to run
 # build_runner locally. Regenerate with
 # `dart run build_runner build --force-jit`
-# when CachedSport/CachedChapter/CachedRule schemas change in
-# lib/core/storage/isar_storage.dart.
+# when CachedSport/CachedLaw/CachedArticle/CachedDecision schemas change
+# in lib/core/storage/isar_storage.dart.
 !lib/core/storage/isar_storage.g.dart
 
 # --- Secrets / Credentials (NEVER commit) -----------------------------------
@@ -86,5 +86,16 @@ revenuecat.json
 *.tmp
 .tmp/
 
-# SDD orchestration state
+# --- Firebase emulator (local state, safe to delete) ------------------------
+.firebase/
+firebase-debug.log
+ui-debug.log
+firestore-debug.log
+firebase-export/
+
+# --- SDD orchestration state -----------------------------------------------
 .PlanningRoom/
+
+# --- node_modules under scripts/ (covered by scripts/.gitignore too, but
+#     adding here protects against deleting scripts/.gitignore accidentally)
+scripts/node_modules/

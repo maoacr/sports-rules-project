@@ -30,7 +30,7 @@ void main() {
     title: 'Football',
     description: 'Official FIFA football rules',
     thumbnailUrl: '',
-    chapterCount: 17,
+    lawCount: 17,
     price: 499,
     isPublished: true,
   );
@@ -93,7 +93,7 @@ void main() {
     await tester.pump();
 
     expect(find.text('Football'), findsOneWidget);
-    expect(find.text('17 chapters • \$4.99'), findsOneWidget);
+    expect(find.text('17 laws • \$4.99'), findsOneWidget);
   });
 
   testWidgets('shows the empty-state message when the list is empty', (tester) async {

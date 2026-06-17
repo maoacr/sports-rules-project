@@ -1,0 +1,76 @@
+{
+  "id": "law-07",
+  "sportId": "football",
+  "title": "The Duration of the Match",
+  "shortName": "Duration",
+  "number": 7,
+  "isFree": false,
+  "sportTitle": "Fútbol",
+  "summary": "Periodos de juego, descanso, tiempo adicional, partido suspendido.",
+  "sourceAttribution": "Texto oficial de IFAB, Laws of the Game 2026/27 (español). https://www.theifab.com/es/",
+  "articles": [
+    {
+      "id": "law-07/art-01",
+      "lawId": "law-07",
+      "sportId": "football",
+      "number": "1",
+      "title": "Periodos de juego",
+      "content": "El partido se desarrollará en dos periodos iguales de 45 minutos cada uno, los cuales pueden reducirse únicamente por acuerdo entre el árbitro y los dos equipos antes del comienzo del partido —siempre y cuando esté permitido por el reglamento de la competición—.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["periodos", "45-minutos", "duracion"],
+      "order": 1
+    },
+    {
+      "id": "law-07/art-02",
+      "lawId": "law-07",
+      "sportId": "football",
+      "number": "2",
+      "title": "Pausa del medio tiempo",
+      "content": "Los jugadores tendrán derecho a una pausa en el descanso de medio tiempo no superior a 15 minutos; también se permite una pausa breve para beber (no superior a un minuto) tras el primer periodo del tiempo suplementario. El reglamento de la competición deberá estipular claramente la duración de la pausa del medio tiempo, la cual solamente podrá modificarse con el permiso del árbitro.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["descanso", "medio-tiempo", "pausa", "rehidratacion"],
+      "order": 2
+    },
+    {
+      "id": "law-07/art-03",
+      "lawId": "law-07",
+      "sportId": "football",
+      "number": "3",
+      "title": "Recuperación del tiempo perdido",
+      "content": "El árbitro podrá prolongar cada periodo para recuperar el tiempo de juego perdido debido a:\n\n• sustituciones;\n• atención o retirada de jugadores lesionados;\n• pérdida deliberada de tiempo;\n• sanciones disciplinarias;\n• pausas por motivos médicos autorizadas por el reglamento de la competición, es decir, las pausas de rehidratación (no superiores a un minuto) y las pausas de refresco (entre 90 segundos y tres minutos);\n• retrasos originados por los chequeos y revisiones del VAR;\n• celebraciones de goles;\n• cualquier otro motivo, lo que incluye todo retraso significativo al reanudarse el juego (p. ej. debido a una interferencia causada por un agente externo).\n\nEl cuarto árbitro indicará el tiempo mínimo que deberá añadirse, si bien el árbitro tomará la decisión final al respecto. Además, este podrá aumentar el tiempo añadido pero no reducirlo.\n\nEl árbitro no podrá compensar un error de cronometraje del primer periodo cambiando la duración del segundo periodo.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["tiempo-adicional", "perdida-tiempo", "var", "rehidratacion", "refresco"],
+      "order": 3
+    },
+    {
+      "id": "law-07/art-04",
+      "lawId": "law-07",
+      "sportId": "football",
+      "number": "4",
+      "title": "Tiro penal",
+      "content": "En caso de que se deba ejecutar o repetir un penal al final de un periodo, se prolongará este hasta que el penal se haya completado.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["penal", "fin-periodo", "prorroga"],
+      "order": 4
+    },
+    {
+      "id": "law-07/art-05",
+      "lawId": "law-07",
+      "sportId": "football",
+      "number": "5",
+      "title": "Partido suspendido definitivamente",
+      "content": "Se volverán a jugar los partidos suspendidos definitivamente, a menos que el reglamento de la competición o el organizador de la misma estipulen otro procedimiento.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["suspension", "reprogramacion"],
+      "order": 5
+    }
+  ],
+  "decisions": [],
+  "imageUrls": [],
+  "imageNote": "Sin diagramas en esta ley."
+}

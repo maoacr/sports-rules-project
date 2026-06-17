@@ -18,9 +18,11 @@ import 'package:sports_rules_app/features/auth/presentation/bloc/auth_bloc.dart'
 import 'package:sports_rules_app/features/sports/data/datasources/sport_local_datasource.dart';
 import 'package:sports_rules_app/features/sports/data/datasources/sport_remote_datasource.dart';
 import 'package:sports_rules_app/features/sports/domain/repositories/sport_repository.dart';
-import 'package:sports_rules_app/features/sports/presentation/bloc/chapter_bloc.dart';
-import 'package:sports_rules_app/features/sports/presentation/bloc/rules_bloc.dart';
+import 'package:sports_rules_app/features/sports/presentation/bloc/article_bloc.dart';
+import 'package:sports_rules_app/features/sports/presentation/bloc/law_bloc.dart';
 import 'package:sports_rules_app/features/sports/presentation/bloc/sports_bloc.dart';
+import 'package:sports_rules_app/features/purchases/domain/repositories/purchases_repository.dart';
+import 'package:sports_rules_app/features/purchases/presentation/bloc/purchases_bloc.dart';
 
 class MockAuthRepository extends Mock implements AuthRepository {}
 
@@ -36,12 +38,22 @@ class MockIsar extends Mock implements Isar {}
 
 class MockFirebaseClient extends Mock implements FirebaseClient {}
 
+class MockPurchasesRepository extends Mock implements PurchasesRepository {}
+
 /// Reset the global service locator and register the standard mock set
 /// for widget tests. Returns the mocks so the caller can configure
 /// stubs. Pass [authRepository] / [sportRepository] to override the
 /// default mocks; pass [prefs] to seed shared preferences values
 /// before the test starts.
-Future<({AuthRepository auth, SportRepository sport, MockFirebaseAuthDataSource authDataSource, MockSportRemoteDataSource sportRemote, MockSportLocalDataSource sportLocal, SharedPreferencesStorage prefs})>
+Future<({
+  AuthRepository auth,
+  SportRepository sport,
+  MockFirebaseAuthDataSource authDataSource,
+  MockSportRemoteDataSource sportRemote,
+  MockSportLocalDataSource sportLocal,
+  SharedPreferencesStorage prefs,
+  PurchasesRepository purchases,
+})>
     setupTestGetIt({
   AuthRepository? authRepository,
   SportRepository? sportRepository,
@@ -56,10 +68,8 @@ Future<({AuthRepository auth, SportRepository sport, MockFirebaseAuthDataSource 
   final mockSportLocal = MockSportLocalDataSource();
   final mockIsar = MockIsar();
   final mockFirebaseClient = MockFirebaseClient();
+  final mockPurchases = MockPurchasesRepository();
 
-  // SharedPreferences (defaults to in-memory if not provided).
-  // Caller must call SharedPreferences.setMockInitialValues({}) once
-  // at the test level — usually inside a setUpAll.
   final sharedPrefs = prefs ?? await SharedPreferences.getInstance();
   final prefsStorage = SharedPreferencesStorage(sharedPrefs);
 
@@ -68,7 +78,7 @@ Future<({AuthRepository auth, SportRepository sport, MockFirebaseAuthDataSource 
   getIt.registerSingleton<Isar>(mockIsar);
   getIt.registerSingleton<SharedPreferencesStorage>(prefsStorage);
 
-  // Data sources — pages and blocs depend on these directly via getIt
+  // Data sources
   getIt.registerSingleton<FirebaseAuthDataSource>(mockAuthData);
   getIt.registerSingleton<SportRemoteDataSource>(mockSportRemote);
   getIt.registerSingleton<SportLocalDataSource>(mockSportLocal);
@@ -76,12 +86,14 @@ Future<({AuthRepository auth, SportRepository sport, MockFirebaseAuthDataSource 
   // Repositories
   getIt.registerSingleton<AuthRepository>(mockAuth);
   getIt.registerSingleton<SportRepository>(mockSport);
+  getIt.registerSingleton<PurchasesRepository>(mockPurchases);
 
   // BLoCs
   getIt.registerFactory<AuthBloc>(() => AuthBloc(getIt()));
   getIt.registerFactory<SportsBloc>(() => SportsBloc(getIt()));
-  getIt.registerFactory<ChapterBloc>(() => ChapterBloc(getIt()));
-  getIt.registerFactory<RulesBloc>(() => RulesBloc(getIt()));
+  getIt.registerFactory<LawBloc>(() => LawBloc(getIt()));
+  getIt.registerFactory<ArticleBloc>(() => ArticleBloc(getIt()));
+  getIt.registerFactory<PurchasesBloc>(() => PurchasesBloc(getIt(), getIt()));
 
   return (
     auth: mockAuth,
@@ -90,5 +102,6 @@ Future<({AuthRepository auth, SportRepository sport, MockFirebaseAuthDataSource 
     sportRemote: mockSportRemote,
     sportLocal: mockSportLocal,
     prefs: prefsStorage,
+    purchases: mockPurchases,
   );
 }

@@ -1,0 +1,64 @@
+{
+  "id": "law-11",
+  "sportId": "football",
+  "title": "Offside",
+  "shortName": "Offside",
+  "number": 11,
+  "isFree": false,
+  "sportTitle": "Fútbol",
+  "summary": "Posición de fuera de juego, cuándo constituye infracción, situaciones exentas y sanciones.",
+  "sourceAttribution": "Texto oficial de IFAB, Laws of the Game 2026/27 (español). https://www.theifab.com/es/",
+  "articles": [
+    {
+      "id": "law-11/art-01",
+      "lawId": "law-11",
+      "sportId": "football",
+      "number": "1",
+      "title": "Posición de fuera de juego",
+      "content": "El hecho de estar en posición de fuera de juego no constituye infracción. Se considera que un jugador está en posición de fuera de juego cuando:\n\n• su cabeza, tronco o pierna (pie incluido) se encuentran, total o parcialmente, en la mitad del terreno de juego del adversario (excluyendo la línea central) y\n• su cabeza, tronco o pierna (pie incluido) se encuentran, total o parcialmente, más cerca de la línea de meta contraria que el balón y el penúltimo adversario.\n\nA la hora de determinar si un jugador está en posición de fuera de juego, no se tendrán en consideración las manos ni los brazos de los jugadores, tampoco en el caso de los guardametas. Con el fin de determinar con claridad las infracciones por fuera de juego, el límite superior del brazo coincide con el punto inferior de la axila.\n\nNo estará en fuera de juego aquel jugador que se encuentre a la misma altura que:\n• el penúltimo adversario o\n• los dos últimos adversarios.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["fuera-de-juego", "posicion", "penultimo-adversario", "balon", "linea-meta"],
+      "order": 1
+    },
+    {
+      "id": "law-11/art-02",
+      "lawId": "law-11",
+      "sportId": "football",
+      "number": "2",
+      "title": "Infracción por fuera de juego",
+      "content": "Únicamente se sancionará a un jugador en posición de fuera de juego en el momento en que el balón toca o es jugado* por un compañero de equipo si llega a participar en el juego de forma activa de una de las siguientes maneras:\n• interfiriendo en el juego, al jugar o tocar un balón pasado o tocado por un compañero;\n• interfiriendo en el juego de un adversario de una de las siguientes maneras:\n  • impidiendo que juegue o pueda jugar el balón, al obstruir claramente el campo visual del adversario;\n  • disputándole el balón;\n  • intentando jugar claramente un balón cercano mediante una acción que tenga un impacto en un adversario;\n  • realizar una acción que afecte claramente a la posibilidad de un adversario de jugar el balón;\no bien:\n• sacando ventaja de dicha posición al jugar el balón o interferir en el juego de un adversario cuando el balón:\n  • haya sido desviado o haya rebotado en un poste, en el travesaño, en un miembro del equipo arbitral o en un adversario;\n  • haya sido «salvada» por un adversario.\n\n*Se tendrá en cuenta el primer punto de contacto en el momento de «jugar» o «tocar» el balón; sin embargo, cuando el guardameta lance el balón con la mano, se usará el último punto de contacto.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["fuera-de-juego", "infraccion", "jugar-balon", "interferencia", "ventaja"],
+      "order": 2
+    },
+    {
+      "id": "law-11/art-03",
+      "lawId": "law-11",
+      "sportId": "football",
+      "number": "3",
+      "title": "Situaciones que no constituyen infracción",
+      "content": "No existirá infracción por fuera de juego cuando un jugador reciba un balón que procede directamente de:\n• un saque de meta;\n• un saque de banda;\n• un saque de esquina.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["fuera-de-juego", "saque-de-meta", "saque-de-banda", "saque-de-esquina"],
+      "order": 3
+    },
+    {
+      "id": "law-11/art-04",
+      "lawId": "law-11",
+      "sportId": "football",
+      "number": "4",
+      "title": "Infracciones y sanciones",
+      "content": "En caso de infracción por fuera de juego, el árbitro concederá un libre indirecto en el lugar donde se produjo, incluso si el jugador infractor se encontrara en su propio campo.\n\nA efectos de determinar el fuera de juego, si un defensor saliera del terreno de juego sin la autorización del árbitro, se considerará que el jugador está situado en la línea de meta o de banda hasta que se detenga de nuevo el juego o hasta que el equipo defensor haya jugado el balón hacia la línea central y se encuentre fuera de su área penal. Si el defensor ha abandonado premeditadamente el terreno de juego, deberá ser amonestado en cuanto deje de estar en juego el balón.\n\nLos jugadores del equipo atacante podrán salir del terreno de juego o permanecer fuera de él para no participar de forma activa en el juego. Si un atacante volviera a entrar por la línea de meta y participara en la jugada antes de que se detenga de nuevo el juego, o antes que el equipo defensor haya jugado el balón hacia la línea central y se encuentre fuera de su área penal, se considerará que está situado en la línea de meta a efectos de determinar el fuera de juego. Se amonestará a todo jugador que salga premeditadamente del terreno de juego, vuelva a entrar sin la autorización del árbitro y no sea sancionado por fuera de juego pero obtenga una ventaja por ello.\n\nSi un jugador del equipo atacante permaneciera inmóvil entre los postes y dentro de la portería adversaria en el preciso momento en el que el balón entra en esta, se concederá el gol, a menos que el jugador cometiera una infracción por fuera de juego o viole la Regla 12, en cuyo caso el juego se reanudará con un libre directo o indirecto.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["fuera-de-juego", "libre-indirecto", "amonestacion", "defensor", "atacante"],
+      "order": 4
+    }
+  ],
+  "decisions": [],
+  "imageUrls": [],
+  "imageNote": "Diagramas de fuera de juego (posiciones del jugador y del balón) en el PDF IFAB 2026/27 pp. 248-255 (Directrices prácticas). Por reproducir con atribución, no se incluye como binario."
+}

@@ -1,0 +1,100 @@
+{
+  "id": "law-05",
+  "sportId": "football",
+  "title": "The Referee",
+  "shortName": "Referee",
+  "number": 5,
+  "isFree": false,
+  "sportTitle": "Fútbol",
+  "summary": "Autoridad, decisiones, facultades (ventaja, medidas disciplinarias, lesiones, interferencia externa), VAR, equipamiento y responsabilidad del equipo arbitral.",
+  "sourceAttribution": "Texto oficial de IFAB, Laws of the Game 2026/27 (español). https://www.theifab.com/es/",
+  "articles": [
+    {
+      "id": "law-05/art-01",
+      "lawId": "law-05",
+      "sportId": "football",
+      "number": "1",
+      "title": "Autoridad del árbitro",
+      "content": "El árbitro es la persona encargada de dirigir el partido y que posee plena autoridad para hacer cumplir las Reglas de Juego en dicho encuentro.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["arbitro", "autoridad"],
+      "order": 1
+    },
+    {
+      "id": "law-05/art-02",
+      "lawId": "law-05",
+      "sportId": "football",
+      "number": "2",
+      "title": "Decisiones arbitrales",
+      "content": "El árbitro tomará sus decisiones según su criterio de acuerdo a las Reglas de Juego y al espíritu del fútbol. Las decisiones del árbitro se basarán en la opinión de este último, quien tiene el poder discrecional para tomar las decisiones adecuadas dentro del marco de las Reglas de Juego.\n\nLas competiciones podrán usar la tecnología para ayudar al árbitro a adoptar o modificar decisiones relacionadas con:\n• el protocolo del VAR;\n• el balón en juego, incluido el uso de la detección automática de goles;\n• el fuera de juego, incluido el uso de la tecnología semiautomatizada para la detección del fuera de juego.\n\nLas decisiones arbitrales sobre hechos y acciones sucedidos durante el encuentro, incluyendo dar por válido un gol o el resultado del partido, son irrevocables. Las decisiones del árbitro y del resto de miembros del equipo arbitral deberán respetarse en todo momento.\n\nSi se ha reanudado el juego o si el árbitro ha señalado el final del primer o del segundo tiempo (incluyendo el tiempo suplementario) y ha abandonado el terreno de juego o ha suspendido definitivamente el partido, el árbitro no podrá cambiar la decisión sobre la forma de reanudar el juego tras darse cuenta de que era incorrecta o tras recibir una indicación de otro miembro del equipo arbitral. No obstante, si al término de uno de los periodos, el árbitro abandonara el terreno de juego para dirigirse al área de revisión o para ordenar a los jugadores que regresen al terreno de juego, seguirá siendo posible modificar una decisión relativa a un incidente sucedido antes de que finalizase ese tiempo.\n\nA excepción de lo establecido en la Regla 12.4 y en el Protocolo del VAR, una vez reanudado el juego, solo podrá imponerse una sanción disciplinaria en el caso de que otro miembro del equipo arbitral haya detectado una infracción y haya intentado comunicarla antes de la reanudación; a tales efectos, la sanción no conllevará la reanudación del juego vinculada con ella.\n\nSi el árbitro no estuviera en condiciones de seguir dirigiendo el partido, este último podrá continuar bajo la supervisión de los demás miembros del equipo arbitral hasta que el balón deje de estar en juego.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["decisiones", "espiritu-del-futbol", "irrevocables", "tecnologia", "var", "dag", "fuera-de-juego"],
+      "order": 2
+    },
+    {
+      "id": "law-05/art-03",
+      "lawId": "law-05",
+      "sportId": "football",
+      "number": "3",
+      "title": "Facultades y obligaciones",
+      "content": "El árbitro:\n\n• hará cumplir las Reglas de Juego;\n• dirigirá el partido en colaboración con los otros miembros del equipo arbitral;\n• cronometrará el tiempo, tomará nota de las incidencias del partido y remitirá a las autoridades competentes el informe o acta del partido, donde se detallarán todas las medidas disciplinarias y cualquier otra incidencia que haya ocurrido antes, durante y después del partido;\n• supervisará o dará la señal para la reanudación del juego.\n\nLa ventaja\n\n• permitirá que el juego prosiga si se produce una infracción o un equipo efectúa una reanudación incorrecta y el balón está en juego, y el equipo adversario se beneficiara de la ventaja tras la acción, y sancionará la infracción cometida/indicará que se repita la reanudación si no se produjera la situación ventajosa de manera inmediata o transcurridos unos pocos segundos.\n\nMedidas disciplinarias\n\n• cuando se cometa más de una infracción al mismo tiempo, castigará la infracción más grave en función de la sanción, la reanudación, la gravedad física y las repercusiones tácticas;\n• tomará medidas disciplinarias contra jugadores que cometan infracciones merecedoras de amonestación o expulsión;\n• tendrá la autoridad para tomar medidas disciplinarias desde el momento en que entra al terreno de juego para realizar la inspección previa al partido hasta que lo abandona una vez terminado el partido (lo cual incluye la tanda de penales). Si, antes de entrar al terreno de juego al comienzo del partido, un jugador cometiera una infracción merecedora de expulsión, el árbitro podrá impedir que el jugador participe en el partido (ver Regla 3.6); el árbitro informará sobre cualquier tipo de conducta incorrecta;\n• tendrá autoridad para mostrar tarjetas amarillas o rojas y, cuando así lo permitan los reglamentos de las competiciones, excluir temporalmente a un jugador, desde el momento en que entra al terreno de juego al comienzo del partido hasta que el partido ha terminado, lo cual incluye el descanso del medio tiempo, el tiempo suplementario (prórroga) y la tanda de penales;\n• tomará medidas contra los miembros del cuerpo técnico que no actúen de forma responsable y podrá hacerles una advertencia y amonestarlos con una tarjeta amarilla o mostrarles tarjeta roja y expulsarlos del terreno de juego y sus inmediaciones, incluida el área técnica. Si no fuera posible identificar al infractor, se sancionará al primer entrenador presente en el área técnica. Si un médico miembro del cuerpo técnico comete una infracción sancionable con expulsión, podrá permanecer si el equipo no cuenta con otro médico disponible, e intervenir si un jugador requiere atención médica;\n• actuará conforme a las indicaciones de los otros miembros del equipo arbitral en relación con aquellas incidencias que le hayan pasado inadvertidas.\n\nLesiones\n\n• permitirá que el juego continúe hasta que el balón ya no esté en juego si la lesión del jugador es leve;\n• detendrá el juego solo si un jugador ha sufrido una lesión grave, y permitirá que sea transportado fuera del terreno de juego. Los jugadores lesionados no podrán ser tratados en el terreno de juego y, si se detuviera el juego o se retrasara su reanudación como consecuencia de una lesión, los jugadores lesionados deberán abandonar el campo y no se les permitirá volver a entrar en él hasta que haya transcurrido un minuto desde que el juego se haya reanudado*; si el balón está en juego, el jugador lesionado volverá al campo por la línea de banda. En cambio, si el balón no está en juego, el jugador lesionado podrá regresar al campo cruzando cualquiera de las líneas de demarcación. Los únicos casos en los que se podrá hacer una excepción a esta regla sobre la salida de los jugadores lesionados para recibir tratamiento o después de él serán cuando:\n  • se lesione un guardameta;\n  • un guardameta y un jugador de campo choquen y requieran atención médica;\n  • varios jugadores del mismo equipo choquen y requieran atención médica;\n  • se haya producido una lesión grave;\n  • se lesione un jugador como resultado de una infracción de carácter físico por la cual se amoneste o expulse al adversario (p. ej. una infracción temeraria o juego brusco y grave);\n  • se conceda un tiro penal y el jugador lesionado vaya a lanzarlo.\n• si un jugador está sangrando, le invitará a que abandone el terreno de juego. Dicho jugador solo podrá volver a entrar tras la señal del árbitro, quien comprobará que la hemorragia haya cesado y que no haya sangre en su uniforme y demás elementos de su equipamiento;\n• si el árbitro autorizara la entrada de los médicos o camilleros, el jugador lesionado deberá salir del terreno de juego, ya sea caminando o en camilla; si el jugador no acatara esta medida, deberá ser amonestado por conducta antideportiva;\n• si el árbitro decidiera amonestar o expulsar a un jugador lesionado y este debiera salir del terreno de juego para recibir atención médica, el árbitro deberá mostrarle la tarjeta antes de que abandone el terreno de juego;\n• si el juego no se detuviese por cualquier otro motivo, o si la lesión sufrida por el jugador no fuera consecuencia de una infracción de las Reglas de Juego, se reanudará el juego con un balón a tierra.\n\n*Véase el «Protocolo del tratamiento y reconocimiento médico fuera del terreno de juego» en la sección «Observaciones y adaptaciones».\n\nInterferencia externa\n\n• detendrá, suspenderá temporalmente o de manera definitiva el partido por cualquier tipo de infracción o interferencia externa, cuando se den las circunstancias siguientes o similares:\n  • la iluminación artificial sea inadecuada;\n  • un espectador lance un objeto y este golpee a un miembro del equipo arbitral, a un jugador o a un miembro del cuerpo técnico de un equipo; en función de la gravedad del incidente, el árbitro podrá permitir que el partido continúe, o bien optar por detener, suspender temporalmente o suspender definitivamente el partido;\n  • un espectador haga sonar un silbato que interfiera en el juego; en ese caso, se detendrá el juego y se reanudará con un balón a tierra;\n  • un segundo balón, un objeto o un animal entre en el terreno de juego durante el partido; en este caso, el árbitro deberá:\n    – detener el juego (y reanudarlo con un balón a tierra) únicamente si interfiriera en el juego, excepto si el balón fuera a entrar en la portería y la interferencia no impidiera que un defensor jugara el balón; se concederá gol si el balón entrara en la portería (incluso si se produjo contacto con el balón), a menos que la interferencia hubiera sido causada por un miembro del equipo atacante;\n    – permitir que el juego continúe si no hay interferencia en el mismo, y ordenar que el balón, objeto o animal se retire del terreno de juego lo antes posible;\n• no permitirá que entren en el terreno de juego personas no autorizadas.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["facultades", "obligaciones", "ventaja", "disciplina", "lesiones", "interferencia-externa", "sangrado"],
+      "order": 3
+    },
+    {
+      "id": "law-05/art-04",
+      "lawId": "law-05",
+      "sportId": "football",
+      "number": "4",
+      "title": "Árbitro asistente de vídeo (VAR)",
+      "content": "La actuación de los VAR solo estará permitida cuando el organizador del encuentro o de la competición cumpla todos los requisitos de implementación descritos en el Manual del VAR, y, haya recibido por escrito el permiso de la FIFA.\n\nEl VAR puede asistir al árbitro únicamente en caso de que se produzca un «error claro, obvio y manifiesto» o un «incidente grave inadvertido» en relación con:\n• gol/no gol;\n• penal/no penal;\n• tarjeta roja (incluida una segunda amonestación claramente incorrecta);\n• confusión de identidad (cuando el árbitro amonesta o expulsa al jugador equivocado);\n• un saque de esquina concedido de forma claramente errónea, siempre que la decisión se pueda cambiar inmediatamente y sin retrasar la reanudación (opción para las competiciones).\n\nLa ayuda del árbitro asistente de vídeo (VAR) se basará en la repetición del incidente. El árbitro deberá tomar la decisión final, que podrá basarse exclusivamente en la información del VAR o en la revisión que él mismo haga de las imágenes en el terreno.\n\nExcepto en los casos del tipo «incidente grave inadvertido», el árbitro (y si procede, otros miembros del equipo arbitral en el terreno de juego) deberá tomar siempre una decisión (incluso la de no penalizar una posible infracción); dicha decisión no se modificará, a menos de que se trate de un «error claro, obvio y manifiesto».\n\nRevisión tras la reanudación del juego\nSi el juego se reanuda después de ser detenido, el árbitro únicamente podrá llevar a cabo una revisión, e imponer la sanción disciplinaria correspondiente, en casos de confusión de identidad, ante una posible infracción conducente a la expulsión relacionada con conducta violenta o por escupir, morder o actuar de forma extremadamente ofensiva, insultante o humillante.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["var", "video", "tarjeta-roja", "confusion-identidad", "saque-esquina"],
+      "order": 4
+    },
+    {
+      "id": "law-05/art-05",
+      "lawId": "law-05",
+      "sportId": "football",
+      "number": "5",
+      "title": "Equipamiento del árbitro",
+      "content": "Equipamiento obligatorio\nEl árbitro deberá disponer del siguiente equipamiento:\n\n• silbato(s);\n• cronómetro(s);\n• tarjetas rojas y amarillas;\n• cuaderno de notas (u otro medio para anotar las incidencias del partido).\n\nOtro equipamiento\nLos árbitros tienen autorización para emplear:\n\n• todo tipo de intercomunicadores que permitan estar en contacto con los otros miembros del equipo arbitral: banderines con señal acústica, auriculares, etc.;\n• sistemas de seguimiento electrónico del rendimiento u otro tipo de dispositivos de control del rendimiento físico;\n• cámaras corporales si el organizador de la competición se las proporciona, posee la propiedad y el control de las imágenes y cumple las pautas pertinentes. Las cámaras pueden incluir micrófonos, que no se pueden usar para retransmitir las comunicaciones con el VAR. Las autoridades competentes pueden usar las imágenes y el sonido de las cámaras para asuntos disciplinarios.\n\nSe prohíbe que los árbitros y los demás miembros del equipo arbitral «en el terreno de juego» usen otro equipamiento electrónico, cámaras incluidas, excepto las cámaras corporales mencionadas. Pueden llevar accesorios siempre y cuando no sean peligrosos.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["equipamiento", "silbato", "cronometro", "tarjetas", "camaras-corporales"],
+      "order": 5
+    },
+    {
+      "id": "law-05/art-06",
+      "lawId": "law-05",
+      "sportId": "football",
+      "number": "6",
+      "title": "Señales del árbitro",
+      "content": "Consulte las ilustraciones para conocer las señales arbitrales aprobadas.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["señales", "ilustraciones"],
+      "order": 6
+    },
+    {
+      "id": "law-05/art-07",
+      "lawId": "law-05",
+      "sportId": "football",
+      "number": "7",
+      "title": "Responsabilidad del equipo arbitral",
+      "content": "Los árbitros y los otros miembros del equipo arbitral no serán responsables de:\n• ningún tipo de lesión que sufra un jugador, miembro del cuerpo técnico o espectador;\n• ningún daño a la propiedad, sea esta del carácter que sea;\n• cualquier otra pérdida sufrida por una persona física, club, empresa, federación o entidad, la cual se deba o pueda deberse a alguna decisión tomada conforme a las Reglas de Juego o con respecto al procedimiento normal requerido para celebrar, jugar y controlar un partido.\n\nTales decisiones pueden ser:\n\n• permitir o no la disputa del encuentro dependiendo de las condiciones del terreno de juego, de sus inmediaciones o de las condiciones meteorológicas;\n• suspender definitivamente un partido por la razón que estime oportuna;\n• determinar la idoneidad del equipamiento o del balón utilizados durante el partido;\n• detener o no un partido debido a la interferencia de los espectadores o a cualquier problema en el área de los espectadores;\n• detener o no el juego para permitir que un jugador lesionado sea transportado fuera del terreno de juego para recibir tratamiento;\n• solicitar que un jugador lesionado sea retirado del terreno de juego para recibir atención médica;\n• permitir o no a un jugador llevar ciertas prendas de ropa o equipamiento;\n• en aquellos casos en los que el árbitro posea esta autoridad, permitir la presencia de personas (incluidos los miembros del cuerpo técnico y del estadio, personal de seguridad, fotógrafos u otros representantes de los medios de comunicación) en las inmediaciones del terreno de juego;\n• cualquier otra decisión tomada conforme a las Reglas de Juego o de acuerdo con sus deberes y lo estipulado por las normas o reglamentos de la FIFA, la confederación, la federación nacional de fútbol o la competición bajo cuya jurisdicción se dispute el partido.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["responsabilidad", "limitacion", "decisiones"],
+      "order": 7
+    }
+  ],
+  "decisions": [],
+  "imageUrls": [],
+  "imageNote": "Diagrama de señales del árbitro en el PDF IFAB 2026/27 pp. 87-89. Por reproducir con atribución, no se incluye como binario."
+}

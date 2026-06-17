@@ -58,6 +58,29 @@ class CachedRule {
   late DateTime createdAt;
 }
 
+/// Isar collection for user-bookmarked rules.
+@collection
+class CachedBookmark {
+  Id id = Isar.autoIncrement;
+
+  @Index(unique: true)
+  late String bookmarkId;
+
+  @Index()
+  late String ruleId;
+
+  @Index()
+  late String chapterId;
+
+  @Index()
+  late String sportId;
+
+  late String ruleTitle;
+  late String chapterTitle;
+  late String sportTitle;
+  late DateTime createdAt;
+}
+
 /// Static helpers for Isar operations.
 class IsarStorage {
   final Isar _isar;
@@ -165,6 +188,38 @@ class IsarStorage {
       await _isar.cachedSports.where().sportIdEqualTo(sportId).deleteAll();
       await _isar.cachedChapters.where().sportIdEqualTo(sportId).deleteAll();
       // Note: rules are cleared by chapter, not sportId directly
+    });
+  }
+
+  // Bookmark operations
+  Future<void> saveBookmark(CachedBookmark bookmark) async {
+    await _isar.writeTxn(() async {
+      await _isar.cachedBookmarks.put(bookmark);
+    });
+  }
+
+  Future<void> deleteBookmark(String bookmarkId) async {
+    await _isar.writeTxn(() async {
+      await _isar.cachedBookmarks.where().bookmarkIdEqualTo(bookmarkId).deleteAll();
+    });
+  }
+
+  Future<CachedBookmark?> getBookmark(String bookmarkId) async {
+    return _isar.cachedBookmarks.where().bookmarkIdEqualTo(bookmarkId).findFirst();
+  }
+
+  Future<List<CachedBookmark>> getAllBookmarks() async {
+    return _isar.cachedBookmarks.where().sortByCreatedAtDesc().findAll();
+  }
+
+  Future<bool> isBookmarked(String ruleId) async {
+    final found = await _isar.cachedBookmarks.where().ruleIdEqualTo(ruleId).findFirst();
+    return found != null;
+  }
+
+  Future<void> deleteBookmarksForSport(String sportId) async {
+    await _isar.writeTxn(() async {
+      await _isar.cachedBookmarks.where().sportIdEqualTo(sportId).deleteAll();
     });
   }
 }

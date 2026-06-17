@@ -1,0 +1,40 @@
+{
+  "id": "law-17",
+  "sportId": "football",
+  "title": "The Corner Kick",
+  "shortName": "Corner kick",
+  "number": 17,
+  "isFree": false,
+  "sportTitle": "Fútbol",
+  "summary": "Procedimiento del saque de esquina desde el cuadrante y sanciones por infracción.",
+  "sourceAttribution": "Texto oficial de IFAB, Laws of the Game 2026/27 (español). https://www.theifab.com/es/",
+  "articles": [
+    {
+      "id": "law-17/art-01",
+      "lawId": "law-17",
+      "sportId": "football",
+      "number": "1",
+      "title": "Procedimiento",
+      "content": "• El balón se colocará en el cuadrante de esquina más cercano al lugar por el que cruzó la línea de meta o al que ocupaba el guardameta cuando se le sancionó.\n• El balón deberá estar inmóvil y ejecutará el saque un jugador del equipo atacante.\n• El balón estará en juego una vez haya sido golpeado con el pie y se mueva con claridad; no será necesario que salga del cuadrante de esquina.\n• No se deberá mover el poste del banderín.\n• Los adversarios deberán permanecer a un mínimo de 9.15 m (10 yd) del cuadrante de esquina hasta que el balón esté en juego.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["saque-de-esquina", "cuadrante", "corner", "banderin", "9-15m"],
+      "order": 1
+    },
+    {
+      "id": "law-17/art-02",
+      "lawId": "law-17",
+      "sportId": "football",
+      "number": "2",
+      "title": "Infracciones y sanciones",
+      "content": "Si, una vez que el balón esté en juego, el jugador que realizó el saque volviera a tocarlo antes de que lo toque otro jugador, se concederá un libre indirecto, o en caso de que cometa una infracción por mano:\n• se concederá un libre directo;\n• se concederá un tiro penal si la infracción se cometió dentro de su área penal, a menos que fuera el guardameta, en cuyo caso se concederá un libre indirecto.\n\nSi durante la ejecución correcta de un saque de esquina el ejecutor golpeara el balón voluntariamente contra un adversario con el fin de jugarlo de nuevo, pero no lo hiciera de manera imprudente o temeraria, ni empleando fuerza excesiva, el árbitro permitirá que el juego continúe.\n\nSi se cometiera cualquier otra infracción de esta regla, se repetirá el saque.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["saque-de-esquina", "infraccion", "libre-indirecto", "libre-directo", "tiro-penal"],
+      "order": 2
+    }
+  ],
+  "decisions": [],
+  "imageUrls": [],
+  "imageNote": "Sin diagramas en esta ley."
+}

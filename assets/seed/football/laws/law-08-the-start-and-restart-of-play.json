@@ -1,0 +1,40 @@
+{
+  "id": "law-08",
+  "sportId": "football",
+  "title": "The Start and Restart of Play",
+  "shortName": "Kick-off",
+  "number": 8,
+  "isFree": false,
+  "sportTitle": "Fútbol",
+  "summary": "Saque inicial y balón a tierra como formas de iniciar y reanudar el juego.",
+  "sourceAttribution": "Texto oficial de IFAB, Laws of the Game 2026/27 (español). https://www.theifab.com/es/",
+  "articles": [
+    {
+      "id": "law-08/art-01",
+      "lawId": "law-08",
+      "sportId": "football",
+      "number": "1",
+      "title": "Saque inicial",
+      "content": "Procedimiento\n\n• El árbitro lanzará una moneda al aire para sortear el campo y el equipo ganador elegirá o bien la mitad del campo desde la que atacará en el primer tiempo, o bien ejecutar el saque inicial.\n• En función de lo anterior, el equipo adversario realizará el saque inicial o elegirá la mitad del campo desde la que atacará en el primer tiempo.\n• El equipo que elija el campo para el primer tiempo ejecutará el saque de centro para iniciar el segundo tiempo.\n• En el segundo tiempo, los equipos cambiarán de campo y atacarán la portería opuesta.\n• Cuando un equipo marque un gol, el equipo adversario reanudará el juego con un saque inicial.\n\nEn el saque inicial:\n\n• todos los jugadores, excepto el que ejecute el saque, deberán encontrarse en su propia mitad del terreno de juego;\n• los adversarios del equipo que efectúe el saque deberán encontrarse como mínimo a 9.15 m (10 yd) del balón hasta que entre en juego;\n• el balón se colocará en el punto central y no se podrá golpear con el pie hasta que el árbitro así lo indique;\n• el árbitro dará la señal;\n• el balón estará en juego en el momento en que lo golpee con el pie el jugador que haya efectuado el saque y se mueva con claridad;\n• será posible marcar un gol directo al equipo adversario desde el saque inicial; si el balón entrara directamente en la meta del lanzador, se concederá un saque de esquina al adversario.\n\nInfracciones y sanciones\nEn caso de que el jugador que ejecute el saque inicial toque el balón por segunda vez antes de que lo toque otro jugador, se concederá un tiro libre indirecto, o bien un libre directo si cometiese una infracción por mano.\n\nPara cualquier otra infracción del procedimiento de saque inicial, se repetirá dicho saque.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["saque-inicial", "saque-de-centro", "moneda", "gol-directo"],
+      "order": 1
+    },
+    {
+      "id": "law-08/art-02",
+      "lawId": "law-08",
+      "sportId": "football",
+      "number": "2",
+      "title": "Balón a tierra",
+      "content": "Procedimiento\n\n• Si al detener el juego:\n  • el balón está en el área penal, el árbitro concederá un balón a tierra al guardameta del equipo defensor dentro de su área penal;\n  • el balón está fuera del área penal, el árbitro concederá un balón a tierra a favor de un jugador del equipo que habría conservado o ganado la posesión (también desde la reanudación si el balón hubiera dejado de estar en juego) siempre que el árbitro pueda determinarlo; en caso contrario, dejará caer el balón ante un jugador del equipo que lo tocó por última vez. El balón deberá tocar el suelo en el lugar en el que se encontraba cuando se detuvo el juego, a menos que hubiera impactado en un árbitro o en un agente externo, en cuyo caso se dejará caer en el lugar en el que se produjo la interferencia o el contacto.\n\n• El resto de jugadores (de ambos equipos) deberán mantener una distancia mínima de 4 m (4.5 yd) con respecto al balón hasta que este esté en juego.\n• El balón estará en juego en el momento en que toque el suelo.\n\nInfracciones y sanciones\nSe repetirá el balón a tierra si este:\n\n• toca a un jugador antes de tocar el suelo;\n• sale del terreno de juego después de tocar el suelo sin haber tocado a un jugador.\n\nSi tras un balón a tierra, este entrara en la portería sin tocar como mínimo a dos jugadores, el juego se reanudará con:\n• un saque de meta si el balón entró en la portería del adversario;\n• un saque de esquina si entró en la portería del jugador que tocó el balón.",
+      "parentArticleId": null,
+      "crossRefs": [],
+      "tags": ["balon-a-tierra", "posesion", "interferencia", "saque-de-meta", "saque-de-esquina"],
+      "order": 2
+    }
+  ],
+  "decisions": [],
+  "imageUrls": [],
+  "imageNote": "Sin diagramas en esta ley."
+}
