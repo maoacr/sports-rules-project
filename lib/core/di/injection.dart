@@ -1,8 +1,4 @@
 import 'package:get_it/get_it.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_storage/firebase_storage.dart';
-import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:isar_community/isar.dart';
 
@@ -64,18 +60,20 @@ Future<void> setupDependencies({
     SharedPreferencesStorage(sharedPreferences),
   );
 
-  // Firebase services
-  getIt.registerSingleton<FirebaseAuth>(FirebaseAuth.instance);
-  getIt.registerSingleton<FirebaseFirestore>(FirebaseFirestore.instance);
-  getIt.registerSingleton<FirebaseStorage>(FirebaseStorage.instance);
-  getIt.registerSingleton<FirebaseRemoteConfig>(FirebaseRemoteConfig.instance);
-
-  // Data sources
+  // Data sources — TEMP (B): the auth and remote data sources accept
+  // a [FirebaseClient] (not raw FirebaseAuth / FirebaseFirestore) so
+  // they can run when Firebase is not initialised: every operation
+  // checks [FirebaseClient.isInitialized] and returns null / throws a
+  // controlled `StateError`/FirebaseException that the repos already
+  // map to a `Failure`. Remove the workaround and switch the data
+  // sources back to FirebaseAuth / FirebaseFirestore when the native
+  // config (GoogleService-Info.plist / google-services.json) is in
+  // place.
   getIt.registerLazySingleton<FirebaseAuthDataSource>(
-    () => FirebaseAuthDataSourceImpl(getIt()),
+    () => FirebaseAuthDataSourceImpl(getIt<FirebaseClient>()),
   );
   getIt.registerLazySingleton<SportRemoteDataSource>(
-    () => SportRemoteDataSourceImpl(getIt()),
+    () => SportRemoteDataSourceImpl(getIt<FirebaseClient>()),
   );
   getIt.registerLazySingleton<SportLocalDataSource>(
     () => SportLocalDataSourceImpl(getIt()),

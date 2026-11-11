@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import '../../../../core/network/firebase_client.dart';
 import '../../domain/entities/decision.dart';
 import '../../domain/entities/law.dart';
 import '../../domain/entities/sport.dart';
@@ -36,9 +37,21 @@ abstract class SportRemoteDataSource {
 }
 
 class SportRemoteDataSourceImpl implements SportRemoteDataSource {
-  final FirebaseFirestore _firestore;
+  final FirebaseClient _client;
 
-  SportRemoteDataSourceImpl(this._firestore);
+  SportRemoteDataSourceImpl(this._client);
+
+  FirebaseFirestore get _firestore {
+    final f = _client.tryFirestore();
+    if (f == null) {
+      throw FirebaseException(
+        plugin: 'cloud_firestore',
+        code: 'firebase-not-initialized',
+        message: 'Firebase is not initialised. Add the native config first.',
+      );
+    }
+    return f;
+  }
 
   // -- Sports -------------------------------------------------------------
 

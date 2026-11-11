@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:isar_community/isar.dart';
 import 'package:path_provider/path_provider.dart';
@@ -31,17 +30,32 @@ const int kFirestoreEmulatorPort = int.fromEnvironment(
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Initialize Firebase
-  await Firebase.initializeApp();
+  // TEMP (B): try to initialize Firebase, but do not crash the app if
+  // the native config files (GoogleService-Info.plist /
+  // google-services.json) are missing. This unblocks local UI work
+  // while the Firebase project is being provisioned. Real auth and
+  // firestore calls will fail gracefully downstream — see
+  // FirebaseClient.isInitialized and the offline banner in app.dart.
+  FirebaseClient.firebaseReady = false;
+  try {
+    await Firebase.initializeApp();
+    FirebaseClient.firebaseReady = true;
 
-  // Point Firestore at the local emulator when the flag is set.
-  // The emulator must be running on the configured host/port
-  // (run `scripts/start-emulator.sh`).
-  if (kUseFirestoreEmulator) {
-    FirebaseFirestore.instance.useFirestoreEmulator(
-      kFirestoreEmulatorHost,
-      kFirestoreEmulatorPort,
-    );
+    if (kUseFirestoreEmulator) {
+      final firestore = FirebaseClient().tryFirestore();
+      if (firestore != null) {
+        firestore.useFirestoreEmulator(
+          kFirestoreEmulatorHost,
+          kFirestoreEmulatorPort,
+        );
+      }
+    }
+  } on FirebaseException catch (e) {
+    // ignore: avoid_print
+    print('[main] Firebase init failed (FirebaseException): ${e.code} ${e.message}');
+  } catch (e) {
+    // ignore: avoid_print
+    print('[main] Firebase init failed: $e');
   }
 
   // Initialize Isar

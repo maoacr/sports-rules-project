@@ -6,6 +6,8 @@ import 'package:crypto/crypto.dart' as crypto;
 import 'dart:convert';
 import 'dart:math';
 
+import '../../../../core/network/firebase_client.dart';
+
 /// Data source for Firebase Authentication operations.
 abstract class FirebaseAuthDataSource {
   Future<User?> getCurrentUser();
@@ -17,18 +19,27 @@ abstract class FirebaseAuthDataSource {
 }
 
 class FirebaseAuthDataSourceImpl implements FirebaseAuthDataSource {
-  final FirebaseAuth _auth;
+  final FirebaseClient _client;
   final GoogleSignIn _googleSignIn;
 
-  FirebaseAuthDataSourceImpl(this._auth, [GoogleSignIn? googleSignIn])
+  FirebaseAuthDataSourceImpl(this._client, [GoogleSignIn? googleSignIn])
       : _googleSignIn = googleSignIn ?? GoogleSignIn();
 
+  FirebaseAuth? get _auth => _client.tryAuth();
+
   @override
-  Future<User?> getCurrentUser() async => _auth.currentUser;
+  Future<User?> getCurrentUser() async => _auth?.currentUser;
 
   @override
   Future<User> signInWithEmail(String email, String password) async {
-    final credential = await _auth.signInWithEmailAndPassword(
+    final auth = _auth;
+    if (auth == null) {
+      throw FirebaseAuthException(
+        code: 'firebase-not-initialized',
+        message: 'Firebase is not initialised. Add the native config first.',
+      );
+    }
+    final credential = await auth.signInWithEmailAndPassword(
       email: email,
       password: password,
     );
@@ -37,6 +48,13 @@ class FirebaseAuthDataSourceImpl implements FirebaseAuthDataSource {
 
   @override
   Future<User> signInWithGoogle() async {
+    final auth = _auth;
+    if (auth == null) {
+      throw FirebaseAuthException(
+        code: 'firebase-not-initialized',
+        message: 'Firebase is not initialised. Add the native config first.',
+      );
+    }
     // Trigger the Google Sign-In flow.
     final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
     if (googleUser == null) {
@@ -67,12 +85,19 @@ class FirebaseAuthDataSourceImpl implements FirebaseAuthDataSource {
     );
 
     // Sign in to Firebase with the credential.
-    final userCredential = await _auth.signInWithCredential(credential);
+    final userCredential = await auth.signInWithCredential(credential);
     return userCredential.user!;
   }
 
   @override
   Future<User> signInWithApple() async {
+    final auth = _auth;
+    if (auth == null) {
+      throw FirebaseAuthException(
+        code: 'firebase-not-initialized',
+        message: 'Firebase is not initialised. Add the native config first.',
+      );
+    }
     // SignInWithApple is only available on iOS, macOS, Android (via web),
     // and Web. Calling on other platforms throws SignInWithAppleNotSupportedException.
     if (!Platform.isIOS && !Platform.isMacOS && !Platform.isAndroid) {
@@ -115,7 +140,7 @@ class FirebaseAuthDataSourceImpl implements FirebaseAuthDataSource {
       rawNonce: rawNonce,
     );
 
-    final userCredential = await _auth.signInWithCredential(oauthCredential);
+    final userCredential = await auth.signInWithCredential(oauthCredential);
 
     // On first sign-in only, Apple provides the user's name. Persist it
     // into the FirebaseUser displayName so subsequent launches still show it.
@@ -146,11 +171,15 @@ class FirebaseAuthDataSourceImpl implements FirebaseAuthDataSource {
     } catch (_) {
       // Ignore: not all platforms support Google sign-in cleanup here.
     }
-    await _auth.signOut();
+    await _auth?.signOut();
   }
 
   @override
-  Stream<User?> authStateChanges() => _auth.authStateChanges();
+  Stream<User?> authStateChanges() {
+    final auth = _auth;
+    if (auth == null) return Stream<User?>.value(null);
+    return auth.authStateChanges();
+  }
 
   // --- Helpers ---
 
